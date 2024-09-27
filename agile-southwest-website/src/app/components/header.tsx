@@ -37,6 +37,16 @@ const NavItem = styled.li`
     font-size: 18px;
 `;
 
+// Hamburger menu icon, which appears on smaller screens
+const MenuIcon = styled.div`
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;  // Show on smaller screens
+  }
+`;
+
 export default function Header() {
     return (
         <HeaderContainer>
