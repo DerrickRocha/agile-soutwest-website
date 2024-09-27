@@ -23,10 +23,13 @@ const LogoContainer = styled.div`
 `;
 
 const NavList = styled.ul`
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin-bottom: 16px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    display: none;  // Hide NavList on smaller screens
+  }
 `;
 
 const NavItem = styled.li`
