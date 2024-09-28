@@ -4,11 +4,12 @@ import Link from "next/link";
 import React, {useState} from "react";
 import styled from "styled-components";
 import Image from 'next/image';
+import {theme} from "@/app/constants/theme";
 
 const HeaderContainer = styled.header`
-    background-color: #003366;
-    padding: 0px 70px;
-    height: 80px;
+    background-color: ${theme.colors.primary};
+    padding: 0px ${theme.padding.gutter};
+    height: ${theme.dimensions.headerHeight};
 `;
 
 const Nav = styled.nav`
@@ -25,16 +26,18 @@ const LogoContainer = styled.div`
 const NavList = styled.ul`
     list-style: none;
     display: flex;
-    gap: 20px;
-    margin-bottom: 16px;
-    @media (max-width: 768px) {
+    gap: ${theme.dimensions.navListGap};
+    margin-bottom: ${theme.dimensions.navListBottomMargin};
+    @media (max-width: ${theme.breakpoints.mobile}) {
         display: none;  // Hide NavList on smaller screens
     }
 `;
 
 const NavItem = styled.li`
     display: inline;
-    font-size: 18px;
+    font-size: ${theme.textSize.links};
+    font-family: ${theme.fonts.links};
+    font-weight: bold;
 `;
 
 // Hamburger menu icon, which appears on smaller screens
