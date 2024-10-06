@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Image from 'next/image';
+import { theme } from "@/app/constants/theme";
 
 const HeaderContainer = styled.header`
-    background-color: #003366;
-    padding: 0px 70px;
-    height: 80px;
+    background-color: ${theme.colors.primary};
+    padding: 0px ${theme.padding.gutter};
+    height: ${theme.dimensions.headerHeight};
 `;
 
 const Nav = styled.nav`
@@ -25,16 +26,18 @@ const LogoContainer = styled.div`
 const NavList = styled.ul`
     list-style: none;
     display: flex;
-    gap: 20px;
-    margin-bottom: 16px;
-    @media (max-width: 768px) {
+    gap: ${theme.dimensions.navListGap};
+    margin-bottom: ${theme.dimensions.navListBottomMargin};
+    @media (max-width: ${theme.breakpoints.mobile}) {
         display: none;  // Hide NavList on smaller screens
     }
 `;
 
 const NavItem = styled.li`
     display: inline;
-    font-size: 18px;
+    font-size: ${theme.textSize.links};
+    font-family: ${theme.fonts.links};
+    font-weight: bold;
 `;
 
 // Hamburger menu icon, which appears on smaller screens
@@ -48,17 +51,16 @@ const MenuIcon = styled.div`
     }
 `;
 
-const MobileNavList = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #003366;
-  position: absolute;
-  top: 80px;
-  right: 0;
-  padding: 10px;
-    display: ${({isOpen}) => (isOpen ? 'flex' : 'none')}; // Toggle visibility based on isOpen
+const MobileNavList = styled.ul<{ $isOpen?: boolean }>`
+    list-style: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #003366;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    padding: 10px;
+    display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')}; // Use transient prop
 
     @media (min-width: 769px) {
         display: none;  // Hide on larger screens
@@ -71,13 +73,14 @@ export default function Header() {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
     return (
         <HeaderContainer>
             <Nav>
                 <LogoContainer>
                     <Link href="/">
                         <Image
-                            src="/images/agile_logo.png"  // Replace with your logo path
+                            src="/images/agile_logo.svg"  // Replace with your logo path
                             alt="Agile Southwest Logo"
                             width={164}
                             height={80}
@@ -109,7 +112,7 @@ export default function Header() {
                         height={48}
                     />
                 </MenuIcon>
-                <MobileNavList isOpen={isMenuOpen}>
+                <MobileNavList $isOpen={isMenuOpen}> {/* Updated to use transient prop */}
                     <NavItem>
                         <Link href="/">Home</Link>
                     </NavItem>
@@ -123,10 +126,7 @@ export default function Header() {
                         <Link href="/contact">Contact</Link>
                     </NavItem>
                 </MobileNavList>
-
-
             </Nav>
         </HeaderContainer>
-
-    )
+    );
 }
