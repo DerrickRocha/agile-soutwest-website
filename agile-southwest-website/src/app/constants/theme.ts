@@ -15,9 +15,11 @@ export const theme = {
         body: '"Roboto", sans-serif',
     },
     breakpoints: {
-        mobile: '768px',
-        tablet: '1024px',
-        desktop: '1200px',
+        mobile: '480px',
+        tablet: '768px',
+        smallDesktop: '1280px',
+        standardDesktop: '1440px',
+        largeDesktop: '1920px'
     },
     padding: {
         gutter: '70px',
@@ -29,11 +31,12 @@ export const theme = {
         navListBottomMargin: '16px'
     },
     textSize: {
-        heading1: '44px',
-        heading2: '28px',
+        heading1: '94px',
+        heading2: '64px',
         heading3: '18px',
         subHeading: '14px',
         body: '14px',
         links: '18px'
     }
+
 };
