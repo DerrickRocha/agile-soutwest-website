@@ -11,16 +11,16 @@ const StyledHero1 = styled.h1<TextProps>`
     font-family: ${({fontFamily}) => fontFamily || 'Arial, sans-serif'}; /* Default to 3rem if no prop is provided */
     color: ${({color}) => color || 'white'}; /* Default to white if no prop is provided */
     font-size: ${theme.textSize.heroHeading1Large};
-    @media (max-width: ${theme.breakpoints.smallDesktop}) {
-        font-size: ${theme.textSize.heroHeading1Small};
+    @media (max-width: ${theme.breakpoints.mobile}) {
+      //  font-size: ${theme.textSize.heroHeading1Small};
     }
 `;
 const StyledHero2 = styled.h1<TextProps>`
     font-size: ${theme.textSize.heroHeading2Large};
     font-family: ${({fontFamily}) => fontFamily || 'Arial, sans-serif'}; /* Default to 3rem if no prop is provided */
     color: ${({color}) => color || 'white'}; /* Default to white if no prop is provided */
-    @media (max-width: ${theme.breakpoints.smallDesktop}) {
-        font-size: ${theme.textSize.heroHeading2Small};
+    @media (max-width: ${theme.breakpoints.mobile}) {
+        //font-size: ${theme.textSize.heroHeading2Small};
     }
 `;
 
