@@ -3,9 +3,9 @@
 import Layout from "@/app/components/layout";
 import Image from "next/image";
 import React from "react";
-import styled from "styled-components";
 import {theme} from "@/app/constants/theme";
-import H1, {H2} from "@/app/components/text";
+import Hero1Text, {Hero2Text} from "@/app/components/text";
+import styled from "styled-components";
 
 const OverlayContainer = styled.div`
     position: relative; /* Required for absolute positioning of overlay */
@@ -22,12 +22,22 @@ const Overlay = styled.div`
 `;
 
 const OverlayText = styled.div`
-    position: absolute; /* Position text absolutely */
-    bottom: 270px; /* Set distance from the bottom */
-    left: ${theme.padding.gutter}; /* Set distance from the left */
+    position: relative; 
+    bottom: 270px; 
+    padding: 0px ${theme.padding.gutter};
     z-index: 2; /* Ensure text is above the overlay */
     text-align: left; /* Align text to the left */
-    width: 60%;
+    width: 75%;
+   
+    @media (max-width: ${theme.breakpoints.smallDesktop}) {
+        width: 100%;
+        text-align: center;
+    }
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        width: 100%;
+        text-align: center;
+
+    }
 `;
 
 function Home() {
@@ -43,8 +53,12 @@ function Home() {
                 />
                 <Overlay />
                 <OverlayText>
-                    <H1 fontFamily={theme.fonts.hero} color="white">Your Vision, Our Expertise</H1>
-                    <H2>Flexible Web and Mobile Solutions for Growing Businesses</H2>
+                    <Hero1Text fontFamily={theme.fonts.hero} color="white">
+                        Your Vision, <span style={{ color: theme.colors.secondary }}>Our Expertise</span>
+                    </Hero1Text>
+                    <Hero2Text fontFamily={theme.fonts.hero} color="white">
+                        Flexible Web and Mobile Solutions for Growing Businesses
+                    </Hero2Text>
                 </OverlayText>
             </OverlayContainer>
         </Layout>

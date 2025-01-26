@@ -31,8 +31,12 @@ export const theme = {
         navListBottomMargin: '16px'
     },
     textSize: {
-        heading1: '94px',
-        heading2: '64px',
+        heroHeading1Large: '71px',
+        heroHeading1Small: '48px',
+        heroHeading2Large: '48px',
+        heroHeading2Small: '32px',
+        heading1: '71px',
+        heading2: '48px',
         heading3: '18px',
         subHeading: '14px',
         body: '14px',

@@ -7,42 +7,54 @@ interface TextProps {
     children: React.ReactNode; // Children elements
 }
 
-// Styled component for H1
-const StyledH1 = styled.h1<TextProps>`
+const StyledHero1 = styled.h1<TextProps>`
     font-family: ${({fontFamily}) => fontFamily || 'Arial, sans-serif'}; /* Default to 3rem if no prop is provided */
     color: ${({color}) => color || 'white'}; /* Default to white if no prop is provided */
-    /* Add bottom margin to create space */
-    margin: 0 0 10px;
-    font-size: ${theme.textSize.heading2};
-    @media (max-width: ${theme.breakpoints.standardDesktop}) {
-        font-size: ${theme.textSize.heading1};
+    font-size: ${theme.textSize.heroHeading1Large};
+    @media (max-width: ${theme.breakpoints.smallDesktop}) {
+        font-size: ${theme.textSize.heroHeading1Small};
     }
-    
+`;
+const StyledHero2 = styled.h1<TextProps>`
+    font-size: ${theme.textSize.heroHeading2Large};
+    font-family: ${({fontFamily}) => fontFamily || 'Arial, sans-serif'}; /* Default to 3rem if no prop is provided */
+    color: ${({color}) => color || 'white'}; /* Default to white if no prop is provided */
+    @media (max-width: ${theme.breakpoints.smallDesktop}) {
+        font-size: ${theme.textSize.heroHeading2Small};
+    }
 `;
 
-const StyledH2 = styled.h1<TextProps>`
-    font-size: ${theme.textSize.heading2};
-    font-family: ${({fontFamily}) => fontFamily || 'Arial, sans-serif'}; /* Default to 3rem if no prop is provided */
-    color: ${({color}) => color || 'white'}; /* Default to white if no prop is provided */
-    /* Add bottom margin to create space */
-    margin: 10px 0 0;
-`;
+export default function Hero1Text({ fontFamily, color, children }: TextProps) {
+    return(
+        <StyledHero1 fontFamily={fontFamily} color = {color}>
+            {children}
+        </StyledHero1>
+    );
+}
+
+export function Hero2Text({ fontFamily, color, children }: TextProps) {
+    return(
+        <StyledHero2 fontFamily={fontFamily} color = {color}>
+            {children}
+        </StyledHero2>
+    );
+}
 
 
 // Functional H1 component using function declaration
-export default function H1({ fontFamily, color, children }: TextProps) {
+/*export default function H1({ fontFamily, color, children }: TextProps) {
     return (
         <StyledH1 fontFamily={fontFamily} color={color}>
             {children}
         </StyledH1>
     );
-}
+}*/
 
 // Functional H1 component using function declaration
-export function H2({ fontFamily, color, children }: TextProps) {
+/*export function H2({ fontFamily, color, children }: TextProps) {
     return (
         <StyledH2 fontFamily={fontFamily} color={color}>
             {children}
         </StyledH2>
     );
-}
+}*/
