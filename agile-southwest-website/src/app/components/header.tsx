@@ -28,7 +28,7 @@ const NavList = styled.ul`
     display: flex;
     gap: ${theme.dimensions.navListGap};
     margin-bottom: ${theme.dimensions.navListBottomMargin};
-    @media (max-width: ${theme.breakpoints.mobile}) {
+    @media (max-width: ${theme.breakpoints.tablet}) {
         display: none;  // Hide NavList on smaller screens
     }
 `;
@@ -46,7 +46,7 @@ const MenuIcon = styled.div`
     cursor: pointer;
     align-self: center;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${theme.breakpoints.tablet}) {
         display: block;  // Show on smaller screens
     }
 `;
@@ -108,8 +108,8 @@ export default function Header() {
                     <Image
                         src="/images/menu_24dp_E8EAED.svg"  // Replace with your logo path
                         alt="Hamburger Menu"
-                        width={48}
-                        height={48}
+                        width={32}
+                        height={32}
                     />
                 </MenuIcon>
                 <MobileNavList $isOpen={isMenuOpen}> {/* Updated to use transient prop */}

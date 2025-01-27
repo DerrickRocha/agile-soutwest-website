@@ -1,3 +1,5 @@
+"use client";
+
 import Layout from "@/app/components/layout";
 
 const ContactPage = () => {

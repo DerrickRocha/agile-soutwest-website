@@ -1,22 +1,32 @@
+
 import React, {ReactNode} from "react";
 import Header from "@/app/components/header";
+import Footer from "@/app/components/footer";
+import styled from "styled-components";
+import {theme} from "@/app/constants/theme";
 
 interface LayoutProps {
     children: ReactNode;  // The children prop represents the content of the page being rendered
 }
 
+const LayoutContainer = styled.div`
+    background-color: ${theme.colors.primary};
+    width: 100%;
+`;
+const Main = styled.div`
+   
+`;
+
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
-        <div>
+        <LayoutContainer>
             <Header/>
-            <main>
+            <Main>
                 {children} {/* This renders the page-specific content */}
-            </main>
+            </Main>
 
-            <footer>
-                <p>&copy; 2024 Agile Southwest. All rights reserved.</p>
-            </footer>
-        </div>
+            <Footer/>
+        </LayoutContainer>
     );
 };
 
