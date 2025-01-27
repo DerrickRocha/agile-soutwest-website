@@ -22,6 +22,7 @@ export const theme = {
         largeDesktop: '1920px'
     },
     padding: {
+        verticalDivSpacing: '40px',
         gutter: '70px',
     },
     dimensions: {

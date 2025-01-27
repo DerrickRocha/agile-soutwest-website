@@ -9,32 +9,36 @@ import styled from "styled-components";
 const HeroContainer = styled.div`
     position: relative;
     width: 100%;
-    height: 900px;
+    height: 920px;
 `;
 
 const Overlay = styled.div`
     position: absolute;
     width: 100%;
-    height: 900px;
+    height: 920px;
     background-color: rgba(0, 51, 102, 0.8);
+    z-index: 1;
 `;
 
 const OverlayTextContainer = styled.div`
     position: absolute;
-    top: 50%;
+    top: 40%;
     padding: 0 ${theme.padding.gutter};
     width: 60%;
     text-align: left;
+    z-index: 2;
     @media (max-width: ${theme.breakpoints.smallDesktop}) {
         width: 100%;  /* Allow it to take up more width on smaller screens */
+        top: 30%;
+
     }
     @media (max-width: ${theme.breakpoints.tablet}) {
-        top: 25%;
         width: 100%;  /* Allow it to take up more width on smaller screens */
+        top: 20%;
         text-align: center; /* Align text to the center */
     }
     @media (max-width: ${theme.breakpoints.mobile}) {
-        top: ${theme.padding.gutter};
+        top: ${theme.padding.verticalDivSpacing};
         width: 100%;  /* Allow it to take up more width on smaller screens */
     }
 `;
@@ -42,11 +46,12 @@ const OverlayTextContainer = styled.div`
 const FixedImage = styled.div`
     position: absolute;
     width: 100%;
-    height: 900px;
+    height: 920px;
     background-image: url('/images/agile-methodology-machine-learning.png');
     background-size: cover;  /* Ensures the image covers the entire div */
     background-position: center;  /* Centers the image within the div */
-    background-repeat: no-repeat;  /* Prevents the image from repeating */ 
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    z-index: 0;
 `;
 
 function Home() {
