@@ -10,7 +10,7 @@ interface LayoutProps {
 }
 
 const LayoutContainer = styled.div`
-    //background-color: ${theme.colors.primary};
+    background-color: ${theme.colors.primary};
     width: 100%;
 `;
 const Main = styled.div`
