@@ -15,7 +15,7 @@ export const theme = {
         body: '"Roboto", sans-serif',
     },
     breakpoints: {
-        mobile: '480px',
+        mobile: '540px',
         tablet: '768px',
         smallDesktop: '1280px',
         standardDesktop: '1440px',

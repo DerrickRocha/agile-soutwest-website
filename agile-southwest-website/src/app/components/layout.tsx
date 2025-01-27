@@ -10,14 +10,11 @@ interface LayoutProps {
 }
 
 const LayoutContainer = styled.div`
-    background-color: ${theme.colors.primary};
+    //background-color: ${theme.colors.primary};
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
 `;
 const Main = styled.div`
-    flex: 1;
+   
 `;
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
