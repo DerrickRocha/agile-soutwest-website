@@ -106,6 +106,11 @@ const HomeServicesCardsDiv = styled.div`
     align-items: center;          /* Vertically center items within the parent */
     gap: ${theme.padding.cardSpacing};
     overflow-x: auto;         /* Enables horizontal scrolling */
+    @media (max-width: ${theme.breakpoints.mobile}) {
+        flex-direction: column;         
+        align-items: center;
+        gap: ${theme.padding.verticalDivSpacingSmall};
+    }
 `;
 const H1Style = styled.div`
     text-align: center;
