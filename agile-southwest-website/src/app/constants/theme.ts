@@ -13,6 +13,8 @@ export const theme = {
         links: 'Verdana, sans-serif',
         heading: 'Arial, sans-serif',
         body: '"Roboto", sans-serif',
+        arial: 'Arial, sans-serif',
+        roboto: 'Roboto, sans-serif'
     },
     breakpoints: {
         mobile: '540px',
@@ -22,26 +24,30 @@ export const theme = {
         largeDesktop: '1920px'
     },
     padding: {
-        verticalDivSpacing: '40px',
+        verticalDivSpacingLarge: '40px',
+        verticalDivSpacingSmall: '22px',
         gutter: '70px',
+        cardBodyPadding: '22px',
+        cardSpacing: '15px',
     },
     dimensions: {
         headerHeight: '80px',
         footerHeight: '80px',
         navListGap: '20px',
-        navListBottomMargin: '16px'
+        navListBottomMargin: '16px',
+        cardWidth: '280px',
+        cardHeight: '450px',
     },
     textSize: {
         heroHeading1Large: '71px',
         heroHeading1Small: '48px',
         heroHeading2Large: '48px',
         heroHeading2Small: '32px',
-        heading1: '71px',
-        heading2: '48px',
+        heading1: '28px',
+        heading2: '22px',
         heading3: '18px',
         subHeading: '14px',
-        body: '14px',
+        body: '18px',
         links: '18px'
     }
-
 };
