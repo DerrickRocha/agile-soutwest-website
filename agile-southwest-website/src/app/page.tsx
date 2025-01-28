@@ -55,9 +55,75 @@ const FixedImage = styled.div`
     background-repeat: no-repeat; /* Prevents the image from repeating */
     z-index: 0;
 `;
+const AboutSectionDiv = styled.div`
+    width: 100%;
+    display: flex;
+    gap: ${theme.padding.verticalDivSpacingSmall};
+    padding: 0 ${theme.padding.gutter};
+    justify-content: space-between;
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        flex-direction: column;
+        gap: ${theme.padding.verticalDivSpacingSmall};
+        text-align: center; /* Align text to the center */
+    }
+`;
+
+const AboutSectionImageDiv = styled.div`
+    width: 50%;
+    height: 800px;
+    background-image: url('/images/home_about_section_image.png');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 8px;
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        width: 100%;
+        height: 400px;
+    }
+`;
+
+const AboutSectionTextDiv = styled.div`
+    width: 50%;
+    padding: 0 ${theme.padding.cardBodyPadding};
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        width: 100%;
+    }
+`;
+const H1Div = styled.div`
+    text-align: center;
+`;
 
 function HomeAboutSection() {
-    return null;
+    return (
+        <AboutSectionDiv>
+            <AboutSectionImageDiv/>
+            <AboutSectionTextDiv>
+                <VerticalSpacingSmall/>
+                <H1Div>
+                    <H1>
+                        Delivering Custom Solutions For Small Business Growth
+                    </H1>
+                </H1Div>
+
+                <VerticalSpacingSmall/>
+                <Body>
+                    At Agile Southwest, we are dedicated to helping small businesses thrive in
+                    the digital age by providing customized web development, native mobile app
+                    development, and electronics repair services. With years of experience serving
+                    businesses across the Southwest, we specialize in building responsive websites,
+                    SEO-optimized solutions, and user-friendly mobile apps tailored to your unique
+                    needs. Our team of experts is committed to delivering high-quality services that
+                    drive results, increase customer engagement, and enhance your overall online presence.
+                    Whether you’re looking for a complete website redesign, a robust Android or iOS app, or
+                    reliable PC,Mac, and electronics repairs, we’re here to turn your vision into reality.
+                    We pride ourselves on offering personalized, cost-effective solutions that support your
+                    business goals. At Agile Southwest, our mission is to combine cutting-edge technology
+                    with a deep understanding of our clients' needs to help them achieve lasting success.
+                    Let us be your partner in driving digital transformation, optimizing your business
+                    operations, and growing your brand.
+                </Body>
+                <VerticalSpacingSmall/>
+            </AboutSectionTextDiv>
+        </AboutSectionDiv>
+    );
 }
 
 function HomeImagesSection() {
@@ -72,7 +138,9 @@ function Home() {
             <HomeServicesSection/>
             <VerticalSpacingSmall/>
             <HomeAboutSection/>
+            <VerticalSpacingSmall/>
             <HomeImagesSection/>
+            <VerticalSpacingSmall/>
         </Layout>
     );
 }
@@ -101,13 +169,13 @@ const HomeServicesDiv = styled.div`
 `;
 
 const HomeServicesCardsDiv = styled.div`
-    display: flex;                /* Enable Flexbox */
-    justify-content: space-between;  /* Align items in a row (default behavior) */
-    align-items: center;          /* Vertically center items within the parent */
+    display: flex; /* Enable Flexbox */
+    justify-content: space-between; /* Align items in a row (default behavior) */
+    align-items: center; /* Vertically center items within the parent */
     gap: ${theme.padding.cardSpacing};
-    overflow-x: auto;         /* Enables horizontal scrolling */
+    overflow-x: auto; /* Enables horizontal scrolling */
     @media (max-width: ${theme.breakpoints.mobile}) {
-        flex-direction: column;         
+        flex-direction: column;
         gap: ${theme.padding.verticalDivSpacingSmall};
     }
 `;
