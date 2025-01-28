@@ -108,15 +108,11 @@ const HomeServicesCardsDiv = styled.div`
     overflow-x: auto;         /* Enables horizontal scrolling */
     @media (max-width: ${theme.breakpoints.mobile}) {
         flex-direction: column;         
-        align-items: center;
         gap: ${theme.padding.verticalDivSpacingSmall};
     }
 `;
 const H1Style = styled.div`
     text-align: center;
-`;
-const ImagesBodyStyle = styled.div`
-    width: auto;
 `;
 
 function HomeServicesSection() {
@@ -129,13 +125,11 @@ function HomeServicesSection() {
             </H1Style>
 
             <VerticalSpacingSmall/>
-            <ImagesBodyStyle>
-                <Body color={theme.colors.gray}>
-                    Explore our professional services, including custom website development, native mobile app development
-                    for Android & iOS, and expert PC,Mac, and electronics repair. We provide tailored solutions to help your
-                    business grow, improve customer engagement, and ensure reliable device performance solutions.
-                </Body>
-            </ImagesBodyStyle>
+            <Body color={theme.colors.gray}>
+                Explore our professional services, including custom website development, native mobile app development
+                for Android & iOS, and expert PC,Mac, and electronics repair. We provide tailored solutions to help your
+                business grow, improve customer engagement, and ensure reliable device performance solutions.
+            </Body>
 
             <VerticalSpacingSmall/>
             <HomeServicesCardsDiv>

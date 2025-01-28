@@ -1,4 +1,4 @@
-import {Body, H1, H2, H3} from "@/app/components/text";
+import {Body, H2} from "@/app/components/text";
 import Image from "next/image";
 import {theme} from "@/app/constants/theme";
 import styled from "styled-components";
@@ -14,8 +14,8 @@ const CardDiv = styled.div`
     width: ${theme.dimensions.cardWidth};
     height: ${theme.dimensions.cardHeight};
     background-color: ${theme.colors.white};
-    border-bottom-left-radius: 8px; /* Rounded bottom-left corner */
-    border-bottom-right-radius: 8px; /* Rounded bottom-right corner */
+    border-bottom-left-radius: 8px; // Rounded bottom-left corner 
+    border-bottom-right-radius: 8px; // Rounded bottom-right corner
 `;
 
 const HeaderStyling = styled.div`
@@ -32,8 +32,8 @@ export default function Card({image, body, heading}: CardProps) {
         <CardDiv>
             <Image
                 src={image} alt='Card image'
-                width={theme.dimensions.cardImageWidth}
-                height={theme.dimensions.cardImageHeight}>
+                width={280}
+                height={180}>
 
             </Image>
             <VerticalSpacingSmall/>
@@ -48,8 +48,6 @@ export default function Card({image, body, heading}: CardProps) {
                     {body}
                 </Body>
             </BodyStyling>
-
-
         </CardDiv>
     );
 }

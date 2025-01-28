@@ -35,8 +35,6 @@ export const theme = {
         footerHeight: '80px',
         navListGap: '20px',
         navListBottomMargin: '16px',
-        cardImageWidth: '280',
-        cardImageHeight: '180',
         cardWidth: '280px',
         cardHeight: '450px',
     },
@@ -52,5 +50,4 @@ export const theme = {
         body: '18px',
         links: '18px'
     }
-
 };
