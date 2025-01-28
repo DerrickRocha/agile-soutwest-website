@@ -26,7 +26,9 @@ export const theme = {
     padding: {
         verticalDivSpacingLarge: '40px',
         verticalDivSpacingSmall: '22px',
+        mobileGutter: '16px',
         gutter: '70px',
+        gutterLarge: '320px',
         cardBodyPadding: '22px',
         cardSpacing: '15px',
     },
@@ -36,7 +38,9 @@ export const theme = {
         navListGap: '20px',
         navListBottomMargin: '16px',
         cardWidth: '280px',
-        cardHeight: '450px',
+        cardHeight: '550px',
+        maxCardHeight: '800px',
+        borderRadius: '8px'
     },
     textSize: {
         heroHeading1Large: '71px',

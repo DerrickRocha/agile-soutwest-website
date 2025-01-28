@@ -7,6 +7,7 @@ import Hero1Text, {Body, H1, Hero2Text} from "@/app/components/text";
 import styled from "styled-components";
 import Card from "@/app/components/card";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
+import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 
 const HeroContainer = styled.div`
     position: relative;
@@ -55,11 +56,124 @@ const FixedImage = styled.div`
     background-repeat: no-repeat; /* Prevents the image from repeating */
     z-index: 0;
 `;
+
+const GutterDiv = styled.div`
+    
+    padding: 0 ${theme.padding.gutterLarge};
+
+    @media (max-width: ${theme.breakpoints.largeDesktop}) {
+        padding: 0 ${theme.padding.gutter};
+    }
+    
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        padding: 0 ${theme.padding.mobileGutter}
+    }
+`;
+
+function Home() {
+    return (
+        <Layout>
+            <HomeHeroSection/>
+            <VerticalSpacingLarge/>
+            <GutterDiv>
+                <HomeServicesSection/>
+                <VerticalSpacingLarge/>
+                <HomeAboutSection/>
+                <VerticalSpacingLarge/>
+                <HomeImagesSection/>
+                <VerticalSpacingLarge/>
+            </GutterDiv>
+
+        </Layout>
+    );
+}
+
+function HomeHeroSection() {
+    return (
+        <HeroContainer>
+            <FixedImage/>
+            <Overlay/>
+            <OverlayTextContainer>
+                <Hero1Text fontFamily={theme.fonts.hero} color="white">
+                    Your Vision, <span style={{color: theme.colors.secondary}}>Our Expertise</span>
+                </Hero1Text>
+                <Hero2Text fontFamily={theme.fonts.hero} color="white">
+                    Flexible Web and Mobile Solutions for Growing Businesses
+                </Hero2Text>
+            </OverlayTextContainer>
+        </HeroContainer>
+    );
+}
+
+const HomeServicesDiv = styled.div`
+    position: relative;
+    width: 100%;
+`;
+
+const HomeServicesCardsDiv = styled.div`
+    width: 100%;
+    display: flex; /* Enable Flexbox */
+    align-items: center; /* Vertically center items within the parent */
+    gap: ${theme.padding.cardSpacing};
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        display: grid; /* Enable CSS Grid */
+        grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    }
+    @media (max-width: ${theme.breakpoints.mobile}) {
+        flex-direction: column;
+        gap: ${theme.padding.verticalDivSpacingSmall};
+    }
+`;
+const H1Style = styled.div`
+    text-align: center;
+`;
+
+function HomeServicesSection() {
+    return (
+        <HomeServicesDiv>
+            <H1Style>
+                <H1 color={theme.colors.primary}>
+                    Services to Drive Your Success
+                </H1>
+            </H1Style>
+
+            <VerticalSpacingSmall/>
+            <Body color={theme.colors.gray}>
+                Explore our professional services, including custom website development, native mobile app development
+                for Android & iOS, and expert PC,Mac, and electronics repair. We provide tailored solutions to help your
+                business grow, improve customer engagement, and ensure reliable device performance solutions.
+            </Body>
+
+            <VerticalSpacingSmall/>
+            <HomeServicesCardsDiv>
+                <Card
+                    image='/images/website_development.png'
+                    heading='Web Development'
+                    body='Custom website development to help small businesses grow with responsive SEO-friendly designs that drive results.'>
+                </Card>
+                <Card
+                    image='/images/native_android_and_ios_development.png'
+                    heading='Native Android & iOS Development'
+                    body='Native Android & iOS app development for small businesses, delivering fast, user-friendly apps that enhance customer engagement and drive growth.'>
+                </Card>
+                <Card
+                    image='/images/mobile_device_screen_repair.png'
+                    heading='Mobile Device Screen Replacement'
+                    body='Professional mobile device screen replacement services, offfering fast, reliable repairs for cracked or damaged screens on all major brands.'>
+                </Card>
+                <Card
+                    image='/images/pc_mac_and_electronics_repair.png'
+                    heading='PC, Mac, and Electronics Repair'
+                    body='Expert PC, Mac, and electronics repair services, providing fast, reliable solutions for hardware, software, and device issues on all major brands.'>
+                </Card>
+            </HomeServicesCardsDiv>
+        </HomeServicesDiv>
+    );
+}
 const AboutSectionDiv = styled.div`
     width: 100%;
     display: flex;
     gap: ${theme.padding.verticalDivSpacingSmall};
-    padding: 0 ${theme.padding.gutter};
     justify-content: space-between;
     @media (max-width: ${theme.breakpoints.tablet}) {
         flex-direction: column;
@@ -69,8 +183,8 @@ const AboutSectionDiv = styled.div`
 `;
 
 const AboutSectionImageDiv = styled.div`
-    width: 50%;
-    height: 800px;
+    width: 100%;
+    height: auto;
     background-image: url('/images/home_about_section_image.png');
     background-repeat: no-repeat; /* Prevents the image from repeating */
     border-radius: 8px;
@@ -126,103 +240,29 @@ function HomeAboutSection() {
     );
 }
 
-function HomeImagesSection() {
-    return null;
-}
-
-function Home() {
-    return (
-        <Layout>
-            <HomeHeroSection/>
-            <VerticalSpacingSmall/>
-            <HomeServicesSection/>
-            <VerticalSpacingSmall/>
-            <HomeAboutSection/>
-            <VerticalSpacingSmall/>
-            <HomeImagesSection/>
-            <VerticalSpacingSmall/>
-        </Layout>
-    );
-}
-
-function HomeHeroSection() {
-    return (
-        <HeroContainer>
-            <FixedImage/>
-            <Overlay/>
-            <OverlayTextContainer>
-                <Hero1Text fontFamily={theme.fonts.hero} color="white">
-                    Your Vision, <span style={{color: theme.colors.secondary}}>Our Expertise</span>
-                </Hero1Text>
-                <Hero2Text fontFamily={theme.fonts.hero} color="white">
-                    Flexible Web and Mobile Solutions for Growing Businesses
-                </Hero2Text>
-            </OverlayTextContainer>
-        </HeroContainer>
-    );
-}
-
-const HomeServicesDiv = styled.div`
-    position: relative;
-    width: 100%;
-    padding: 0 ${theme.padding.gutter};
-`;
-
-const HomeServicesCardsDiv = styled.div`
+const HomeImagesDiv = styled.div`
     display: flex; /* Enable Flexbox */
-    justify-content: space-between; /* Align items in a row (default behavior) */
-    align-items: center; /* Vertically center items within the parent */
     gap: ${theme.padding.cardSpacing};
-    overflow-x: auto; /* Enables horizontal scrolling */
     @media (max-width: ${theme.breakpoints.mobile}) {
         flex-direction: column;
         gap: ${theme.padding.verticalDivSpacingSmall};
     }
 `;
-const H1Style = styled.div`
-    text-align: center;
+
+
+const RoundedImage = styled.img`
+    border-radius: ${theme.dimensions.borderRadius};  /* Rounds the corners */
+    width: 100%; 
 `;
 
-function HomeServicesSection() {
+function HomeImagesSection() {
     return (
-        <HomeServicesDiv>
-            <H1Style>
-                <H1 color={theme.colors.primary}>
-                    Services to Drive Your Success
-                </H1>
-            </H1Style>
+        <HomeImagesDiv>
+            <RoundedImage src="/images/neural_network1.jpeg" alt="Neural network image"/>
+            <RoundedImage src="/images/web_development.jpg" alt="Web development image"/>
+            <RoundedImage src="/images/soldering.jpg" alt="Web development image"/>
 
-            <VerticalSpacingSmall/>
-            <Body color={theme.colors.gray}>
-                Explore our professional services, including custom website development, native mobile app development
-                for Android & iOS, and expert PC,Mac, and electronics repair. We provide tailored solutions to help your
-                business grow, improve customer engagement, and ensure reliable device performance solutions.
-            </Body>
-
-            <VerticalSpacingSmall/>
-            <HomeServicesCardsDiv>
-                <Card
-                    image='/images/website_development.png'
-                    heading='Web Development'
-                    body='Custom website development to help small businesses grow with responsive SEO-friendly designs that drive results.'>
-                </Card>
-                <Card
-                    image='/images/native_android_and_ios_development.png'
-                    heading='Native Android & iOS Development'
-                    body='Native Android & iOS app development for small businesses, delivering fast, user-friendly apps that enhance customer engagement and drive growth.'>
-                </Card>
-                <Card
-                    image='/images/mobile_device_screen_repair.png'
-                    heading='Mobile Device Screen Replacement'
-                    body='Professional mobile device screen replacement services, offfering fast, reliable repairs for cracked or damaged screens on all major brands.'>
-                </Card>
-                <Card
-                    image='/images/pc_mac_and_electronics_repair.png'
-                    heading='PC, Mac, and Electronics Repair'
-                    body='Expert PC, Mac, and electronics repair services, providing fast, reliable solutions for hardware, software, and device issues on all major brands.'>
-                </Card>
-            </HomeServicesCardsDiv>
-        </HomeServicesDiv>
+        </HomeImagesDiv>
     );
 }
 
