@@ -37,8 +37,8 @@ const BodyStyling = styled.div`
 
 const RoundedImage = styled.img`
     width: 100%;
-    border-top-left-radius: 8px; // Rounded bottom-left corner 
-    border-top-right-radius: 8px; // Rounded bottom-right corner
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
 `;
 
 export default function Card({image, body, heading}: CardProps) {
