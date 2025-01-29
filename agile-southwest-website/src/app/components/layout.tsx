@@ -6,7 +6,7 @@ import styled from "styled-components";
 import {theme} from "@/app/constants/theme";
 
 interface LayoutProps {
-    children: ReactNode;  // The children prop represents the content of the page being rendered
+    children: ReactNode;
 }
 
 const LayoutContainer = styled.div`
@@ -22,7 +22,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <LayoutContainer>
             <Header/>
             <Main>
-                {children} {/* This renders the page-specific content */}
+                {children}
             </Main>
 
             <Footer/>

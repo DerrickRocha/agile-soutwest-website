@@ -7,6 +7,7 @@ import Hero1Text, {Body, H1, Hero2Text} from "@/app/components/text";
 import styled from "styled-components";
 import Card from "@/app/components/card";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
+import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 
 const HeroContainer = styled.div`
     position: relative;
@@ -30,18 +31,18 @@ const OverlayTextContainer = styled.div`
     text-align: left;
     z-index: 2;
     @media (max-width: ${theme.breakpoints.smallDesktop}) {
-        width: 100%;  /* Allow it to take up more width on smaller screens */
+        width: 100%;  
         top: 30%;
 
     }
     @media (max-width: ${theme.breakpoints.tablet}) {
-        width: 100%;  /* Allow it to take up more width on smaller screens */
+        width: 100%;  
         top: 20%;
-        text-align: center; /* Align text to the center */
+        text-align: center; 
     }
     @media (max-width: ${theme.breakpoints.mobile}) {
         top: ${theme.padding.verticalDivSpacingLarge};
-        width: 100%;  /* Allow it to take up more width on smaller screens */
+        width: 100%;  
     }
 `;
 
@@ -50,29 +51,39 @@ const FixedImage = styled.div`
     width: 100%;
     height: 920px;
     background-image: url('/images/agile-methodology-machine-learning.png');
-    background-size: cover; /* Ensures the image covers the entire div */
-    background-position: center; /* Centers the image within the div */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
     z-index: 0;
 `;
 
-function HomeAboutSection() {
-    return null;
-}
+const GutterDiv = styled.div`
+    
+    padding: 0 ${theme.padding.gutterLarge};
 
-function HomeImagesSection() {
-    return null;
-}
+    @media (max-width: ${theme.breakpoints.largeDesktop}) {
+        padding: 0 ${theme.padding.gutter};
+    }
+    
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        padding: 0 ${theme.padding.mobileGutter}
+    }
+`;
 
 function Home() {
     return (
         <Layout>
             <HomeHeroSection/>
-            <VerticalSpacingSmall/>
-            <HomeServicesSection/>
-            <VerticalSpacingSmall/>
-            <HomeAboutSection/>
-            <HomeImagesSection/>
+            <VerticalSpacingLarge/>
+            <GutterDiv>
+                <HomeServicesSection/>
+                <VerticalSpacingLarge/>
+                <HomeAboutSection/>
+                <VerticalSpacingLarge/>
+                <HomeImagesSection/>
+                <VerticalSpacingLarge/>
+            </GutterDiv>
+
         </Layout>
     );
 }
@@ -97,17 +108,20 @@ function HomeHeroSection() {
 const HomeServicesDiv = styled.div`
     position: relative;
     width: 100%;
-    padding: 0 ${theme.padding.gutter};
 `;
 
 const HomeServicesCardsDiv = styled.div`
-    display: flex;                /* Enable Flexbox */
-    justify-content: space-between;  /* Align items in a row (default behavior) */
-    align-items: center;          /* Vertically center items within the parent */
+    width: 100%;
+    display: flex; 
+    align-items: center; 
     gap: ${theme.padding.cardSpacing};
-    overflow-x: auto;         /* Enables horizontal scrolling */
+    overflow-x: auto;
+    @media (max-width: ${theme.breakpoints.smallDesktop}) {
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+    }
     @media (max-width: ${theme.breakpoints.mobile}) {
-        flex-direction: column;         
+        grid-template-columns: repeat(1, 1fr);
         gap: ${theme.padding.verticalDivSpacingSmall};
     }
 `;
@@ -120,7 +134,7 @@ function HomeServicesSection() {
         <HomeServicesDiv>
             <H1Style>
                 <H1 color={theme.colors.primary}>
-                    Services to Drive Your Success
+                    Comprehensive Services to Drive Your Success
                 </H1>
             </H1Style>
 
@@ -155,6 +169,102 @@ function HomeServicesSection() {
                 </Card>
             </HomeServicesCardsDiv>
         </HomeServicesDiv>
+    );
+}
+const AboutSectionDiv = styled.div`
+    display: flex;
+    gap: ${theme.padding.verticalDivSpacingSmall};
+    min-height: 600px;
+    
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        flex-direction: column;
+        gap: ${theme.padding.verticalDivSpacingSmall};
+        text-align: center; 
+    }
+`;
+
+const AboutSectionImageDiv = styled.div`
+    width: 100%;
+    background-image: url('/images/home_about_section_image.png');
+    background-repeat: no-repeat; 
+    border-radius: 8px;
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        height: 400px;
+    }
+`;
+
+const AboutSectionTextDiv = styled.div`
+    width: 100%;
+    padding: 0 ${theme.padding.cardBodyPadding};
+    @media (max-width: ${theme.breakpoints.tablet}) {
+    }
+`;
+const H1Div = styled.div`
+    text-align: center;
+`;
+
+function HomeAboutSection() {
+    return (
+        <AboutSectionDiv>
+            <AboutSectionImageDiv/>
+            <AboutSectionTextDiv>
+                <VerticalSpacingSmall/>
+                <H1Div>
+                    <H1>
+                        Delivering Custom Solutions For Small Business Growth
+                    </H1>
+                </H1Div>
+
+                <VerticalSpacingSmall/>
+                <Body>
+                    At Agile Southwest, we are dedicated to helping small businesses thrive in
+                    the digital age by providing customized web development, native mobile app
+                    development, and electronics repair services. With years of experience serving
+                    businesses across the Southwest, we specialize in building responsive websites,
+                    SEO-optimized solutions, and user-friendly mobile apps tailored to your unique
+                    needs. Our team of experts is committed to delivering high-quality services that
+                    drive results, increase customer engagement, and enhance your overall online presence.
+                    Whether you’re looking for a complete website redesign, a robust Android or iOS app, or
+                    reliable PC, Mac, and electronics repairs, we’re here to turn your vision into reality.
+                    In addition to software solutions, we also provide professional soldering services for
+                    electronics, including power terminals and various components. Whether you're dealing with
+                    damaged power connections, broken terminals, or other small electronic repairs, our experienced
+                    team is equipped to help.
+                    We pride ourselves on offering personalized, cost-effective solutions that support your
+                    business goals. At Agile Southwest, our mission is to combine cutting-edge technology
+                    with a deep understanding of our clients' needs to help them achieve lasting success.
+                    Let us be your partner in driving digital transformation, optimizing your business
+                    operations, and growing your brand.
+                </Body>
+                <VerticalSpacingSmall/>
+            </AboutSectionTextDiv>
+        </AboutSectionDiv>
+    );
+}
+
+const HomeImagesDiv = styled.div`
+    display: flex; 
+    gap: ${theme.padding.cardSpacing};
+    @media (max-width: ${theme.breakpoints.mobile}) {
+        flex-direction: column;
+        gap: ${theme.padding.verticalDivSpacingSmall};
+    }
+`;
+
+
+const RoundedImage = styled.img`
+    border-radius: ${theme.dimensions.borderRadius};  
+    width: 100%; 
+`;
+
+function HomeImagesSection() {
+    return (
+        <HomeImagesDiv>
+            <RoundedImage src="/images/neural_network1.jpeg" alt="Neural network image"/>
+            <RoundedImage src="/images/web_development.jpg" alt="Web development image"/>
+            <RoundedImage src="/images/soldering.jpg" alt="Web development image"/>
+
+        </HomeImagesDiv>
     );
 }
 

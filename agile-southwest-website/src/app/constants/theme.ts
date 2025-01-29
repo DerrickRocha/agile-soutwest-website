@@ -19,14 +19,16 @@ export const theme = {
     breakpoints: {
         mobile: '540px',
         tablet: '768px',
-        smallDesktop: '1280px',
+        smallDesktop: '1024px',
         standardDesktop: '1440px',
         largeDesktop: '1920px'
     },
     padding: {
         verticalDivSpacingLarge: '40px',
         verticalDivSpacingSmall: '22px',
+        mobileGutter: '16px',
         gutter: '70px',
+        gutterLarge: '320px',
         cardBodyPadding: '22px',
         cardSpacing: '15px',
     },
@@ -36,7 +38,11 @@ export const theme = {
         navListGap: '20px',
         navListBottomMargin: '16px',
         cardWidth: '280px',
-        cardHeight: '450px',
+        cardHeight: '550px',
+        tabletCardHeight: '450px',
+        borderRadius: '8px',
+        smallDesktopCardHeight: '470px',
+        standardDesktopCardHeight: '485px',
     },
     textSize: {
         heroHeading1Large: '71px',
