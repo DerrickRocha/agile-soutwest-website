@@ -227,7 +227,11 @@ function HomeAboutSection() {
                     needs. Our team of experts is committed to delivering high-quality services that
                     drive results, increase customer engagement, and enhance your overall online presence.
                     Whether you’re looking for a complete website redesign, a robust Android or iOS app, or
-                    reliable PC,Mac, and electronics repairs, we’re here to turn your vision into reality.
+                    reliable PC, Mac, and electronics repairs, we’re here to turn your vision into reality.
+                    In addition to software solutions, we also provide professional soldering services for
+                    electronics, including power terminals and various components. Whether you're dealing with
+                    damaged power connections, broken terminals, or other small electronic repairs, our experienced
+                    team is equipped to help.
                     We pride ourselves on offering personalized, cost-effective solutions that support your
                     business goals. At Agile Southwest, our mission is to combine cutting-edge technology
                     with a deep understanding of our clients' needs to help them achieve lasting success.
