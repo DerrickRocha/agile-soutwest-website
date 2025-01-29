@@ -115,12 +115,13 @@ const HomeServicesCardsDiv = styled.div`
     display: flex; /* Enable Flexbox */
     align-items: center; /* Vertically center items within the parent */
     gap: ${theme.padding.cardSpacing};
-    @media (max-width: ${theme.breakpoints.tablet}) {
+    overflow-x: auto;
+    @media (max-width: ${theme.breakpoints.smallDesktop}) {
         display: grid; /* Enable CSS Grid */
         grid-template-columns: repeat(2, 1fr); /* Two items per row */
     }
     @media (max-width: ${theme.breakpoints.mobile}) {
-        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr); /* Two items per row */
         gap: ${theme.padding.verticalDivSpacingSmall};
     }
 `;

@@ -19,7 +19,7 @@ export const theme = {
     breakpoints: {
         mobile: '540px',
         tablet: '768px',
-        smallDesktop: '1280px',
+        smallDesktop: '1024px',
         standardDesktop: '1440px',
         largeDesktop: '1920px'
     },
@@ -39,8 +39,10 @@ export const theme = {
         navListBottomMargin: '16px',
         cardWidth: '280px',
         cardHeight: '550px',
-        maxCardHeight: '800px',
-        borderRadius: '8px'
+        tabletCardHeight: '450px',
+        borderRadius: '8px',
+        smallDesktopCardHeight: '470px',
+        standardDesktopCardHeight: '485px',
     },
     textSize: {
         heroHeading1Large: '71px',
