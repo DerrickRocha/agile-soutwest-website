@@ -134,7 +134,7 @@ function HomeServicesSection() {
         <HomeServicesDiv>
             <H1Style>
                 <H1 color={theme.colors.primary}>
-                    Services to Drive Your Success
+                    Comprehensive Services to Drive Your Success
                 </H1>
             </H1Style>
 
@@ -172,10 +172,10 @@ function HomeServicesSection() {
     );
 }
 const AboutSectionDiv = styled.div`
-    width: 100%;
     display: flex;
     gap: ${theme.padding.verticalDivSpacingSmall};
-    justify-content: space-between;
+    min-height: 600px;
+    
     @media (max-width: ${theme.breakpoints.tablet}) {
         flex-direction: column;
         gap: ${theme.padding.verticalDivSpacingSmall};
@@ -185,7 +185,6 @@ const AboutSectionDiv = styled.div`
 
 const AboutSectionImageDiv = styled.div`
     width: 100%;
-    height: auto;
     background-image: url('/images/home_about_section_image.png');
     background-repeat: no-repeat; /* Prevents the image from repeating */
     border-radius: 8px;
@@ -196,7 +195,7 @@ const AboutSectionImageDiv = styled.div`
 `;
 
 const AboutSectionTextDiv = styled.div`
-    width: 50%;
+    width: 100%;
     padding: 0 ${theme.padding.cardBodyPadding};
     @media (max-width: ${theme.breakpoints.tablet}) {
         width: 100%;
