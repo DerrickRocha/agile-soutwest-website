@@ -1,5 +1,4 @@
 import {Body, H2} from "@/app/components/text";
-import Image from "next/image";
 import {theme} from "@/app/constants/theme";
 import styled from "styled-components";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
@@ -11,11 +10,20 @@ interface CardProps {
 }
 
 const CardDiv = styled.div`
-    width: ${theme.dimensions.cardWidth};
-    height: ${theme.dimensions.cardHeight};
+    width: 100%;
+    height: auto;
+    min-height: ${theme.dimensions.cardHeight};
     background-color: ${theme.colors.white};
-    border-bottom-left-radius: 8px; // Rounded bottom-left corner 
-    border-bottom-right-radius: 8px; // Rounded bottom-right corner
+    border-radius: 8px;
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        min-height: ${theme.dimensions.tabletCardHeight};
+    }
+    @media (max-width: ${theme.breakpoints.smallDesktop}) {
+        min-height: ${theme.dimensions.smallDesktopCardHeight};
+    }
+    @media (max-width: ${theme.breakpoints.largeDesktop}) {
+        min-height: ${theme.dimensions.standardDesktopCardHeight};
+    }
 `;
 
 const HeaderStyling = styled.div`
@@ -27,15 +35,19 @@ const BodyStyling = styled.div`
     padding: 0 ${theme.padding.verticalDivSpacingSmall};
 `;
 
+const RoundedImage = styled.img`
+    width: 100%;
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+`;
+
 export default function Card({image, body, heading}: CardProps) {
     return (
         <CardDiv>
-            <Image
-                src={image} alt='Card image'
-                width={280}
-                height={180}>
+            <RoundedImage
+                src={image} alt='Card image'>
 
-            </Image>
+            </RoundedImage>
             <VerticalSpacingSmall/>
             <HeaderStyling>
                 <H2 color={theme.colors.primary}>
@@ -48,6 +60,7 @@ export default function Card({image, body, heading}: CardProps) {
                     {body}
                 </Body>
             </BodyStyling>
+            <VerticalSpacingSmall/>
         </CardDiv>
     );
 }

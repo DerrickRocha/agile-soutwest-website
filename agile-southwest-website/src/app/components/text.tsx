@@ -2,47 +2,47 @@ import styled from "styled-components";
 import {theme} from "@/app/constants/theme";
 
 interface TextProps {
-    fontFamily?: string; // Optional prop for font size
-    color?: string;    // Optional prop for text color
-    children: React.ReactNode; // Children elements
+    fontFamily?: string;
+    color?: string;
+    children: React.ReactNode;
 }
 
 
 const StyledHero1 = styled.h1<TextProps>`
-    font-family: ${({fontFamily}) => fontFamily || 'Arial, sans-serif'}; /* Default to 3rem if no prop is provided */
-    color: ${({color}) => color || 'white'}; /* Default to white if no prop is provided */
+    font-family: ${({fontFamily}) => fontFamily || 'Arial, sans-serif'}; 
+    color: ${({color}) => color || 'white'}; 
     font-size: ${theme.textSize.heroHeading1Large};
 `;
 const StyledHero2 = styled.h1<TextProps>`
     font-size: ${theme.textSize.heroHeading2Large};
-    font-family: ${({fontFamily}) => fontFamily || 'Arial, sans-serif'}; /* Default to 3rem if no prop is provided */
-    color: ${({color}) => color || 'white'}; /* Default to white if no prop is provided */
+    font-family: ${({fontFamily}) => fontFamily || 'Arial, sans-serif'}; 
+    color: ${({color}) => color || 'white'}; 
 `;
 
 const StyleH1 = styled.h1<TextProps>`
     font-size: ${theme.textSize.heading1};
     font-family: ${theme.fonts.arial};
-    color: ${({color}) => color || theme.colors.primary}; /* Default to white if no prop is provided */
+    color: ${({color}) => color || theme.colors.primary}; 
     font-weight: bold;
 `;
 
 const StyleH2 = styled.h2<TextProps>`
     font-size: ${theme.textSize.heading2};
     font-family: ${theme.fonts.arial};
-    color: ${({color}) => color || theme.colors.primary}; /* Default to white if no prop is provided */
+    color: ${({color}) => color || theme.colors.primary}; 
     font-weight: bold;
 `;
 
 const StyleH3 = styled.h3<TextProps>`
     font-size: ${theme.textSize.heading3};
     font-family: ${theme.fonts.arial};
-    color: ${({color}) => color || theme.colors.primary}; /* Default to white if no prop is provided */
+    color: ${({color}) => color || theme.colors.primary}; 
 `;
 
 const StyleBody = styled.text<TextProps>`
     font-size: ${theme.textSize.body};
     font-family: ${theme.fonts.roboto};
-    color: ${({color}) => color || theme.colors.gray}; /* Default to white if no prop is provided */
+    color: ${({color}) => color || theme.colors.gray}; 
 `;
 
 export default function Hero1Text({ fontFamily, color, children }: TextProps) {

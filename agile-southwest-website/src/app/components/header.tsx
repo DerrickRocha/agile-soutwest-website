@@ -29,7 +29,7 @@ const NavList = styled.ul`
     gap: ${theme.dimensions.navListGap};
     margin-bottom: ${theme.dimensions.navListBottomMargin};
     @media (max-width: ${theme.breakpoints.tablet}) {
-        display: none;  // Hide NavList on smaller screens
+        display: none;  
     }
 `;
 
@@ -47,7 +47,7 @@ const MenuIcon = styled.div`
     align-self: center;
 
     @media (max-width: ${theme.breakpoints.tablet}) {
-        display: block;  // Show on smaller screens
+        display: block;  
     }
 `;
 
@@ -63,7 +63,7 @@ const MobileNavList = styled.ul<{ $isOpen?: boolean }>`
     display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')}; // Use transient prop
 
     @media (min-width: 769px) {
-        display: none;  // Hide on larger screens
+        display: none;  
     }
 `;
 
@@ -80,14 +80,13 @@ export default function Header() {
                 <LogoContainer>
                     <Link href="/">
                         <Image
-                            src="/images/agile_logo.svg"  // Replace with your logo path
+                            src="/images/agile_logo.svg"
                             alt="Agile Southwest Logo"
                             width={164}
                             height={80}
                         />
                     </Link>
                 </LogoContainer>
-                {/* Normal Nav List (hidden on small screens) */}
                 <NavList>
                     <NavItem>
                         <Link href="/">Home</Link>
@@ -103,16 +102,15 @@ export default function Header() {
                     </NavItem>
                 </NavList>
 
-                {/* Hamburger Menu Icon (visible on small screens) */}
                 <MenuIcon onClick={toggleMenu}>
                     <Image
-                        src="/images/menu_24dp_E8EAED.svg"  // Replace with your logo path
+                        src="/images/menu_24dp_E8EAED.svg"
                         alt="Hamburger Menu"
                         width={32}
                         height={32}
                     />
                 </MenuIcon>
-                <MobileNavList $isOpen={isMenuOpen}> {/* Updated to use transient prop */}
+                <MobileNavList $isOpen={isMenuOpen}> {}
                     <NavItem>
                         <Link href="/">Home</Link>
                     </NavItem>
