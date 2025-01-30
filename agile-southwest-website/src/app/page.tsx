@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Card from "@/app/components/card";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
+import PageWrapper from "@/app/components/pageWrapper";
 
 const HeroContainer = styled.div`
     position: relative;
@@ -57,32 +58,17 @@ const FixedImage = styled.div`
     z-index: 0;
 `;
 
-const GutterDiv = styled.div`
-    
-    padding: 0 ${theme.padding.gutterLarge};
-
-    @media (max-width: ${theme.breakpoints.largeDesktop}) {
-        padding: 0 ${theme.padding.gutter};
-    }
-    
-    @media (max-width: ${theme.breakpoints.tablet}) {
-        padding: 0 ${theme.padding.mobileGutter}
-    }
-`;
-
 function Home() {
     return (
         <Layout>
             <HomeHeroSection/>
-            <VerticalSpacingLarge/>
-            <GutterDiv>
+            <PageWrapper>
                 <HomeServicesSection/>
                 <VerticalSpacingLarge/>
                 <HomeAboutSection/>
                 <VerticalSpacingLarge/>
                 <HomeImagesSection/>
-                <VerticalSpacingLarge/>
-            </GutterDiv>
+            </PageWrapper>
 
         </Layout>
     );
@@ -125,18 +111,13 @@ const HomeServicesCardsDiv = styled.div`
         gap: ${theme.padding.verticalDivSpacingSmall};
     }
 `;
-const H1Style = styled.div`
-    text-align: center;
-`;
 
 function HomeServicesSection() {
     return (
         <HomeServicesDiv>
-            <H1Style>
-                <H1 color={theme.colors.primary}>
-                    Comprehensive Services to Drive Your Success
-                </H1>
-            </H1Style>
+            <H1 color={theme.colors.primary} textAlign={'center'}>
+                Comprehensive Services to Drive Your Success
+            </H1>
 
             <VerticalSpacingSmall/>
             <Body color={theme.colors.gray}>
@@ -199,9 +180,6 @@ const AboutSectionTextDiv = styled.div`
     @media (max-width: ${theme.breakpoints.tablet}) {
     }
 `;
-const H1Div = styled.div`
-    text-align: center;
-`;
 
 function HomeAboutSection() {
     return (
@@ -209,11 +187,9 @@ function HomeAboutSection() {
             <AboutSectionImageDiv/>
             <AboutSectionTextDiv>
                 <VerticalSpacingSmall/>
-                <H1Div>
-                    <H1>
-                        Delivering Custom Solutions For Small Business Growth
-                    </H1>
-                </H1Div>
+                <H1 textAlign={'center'}>
+                    Delivering Custom Solutions For Small Business Growth
+                </H1>
 
                 <VerticalSpacingSmall/>
                 <Body>
