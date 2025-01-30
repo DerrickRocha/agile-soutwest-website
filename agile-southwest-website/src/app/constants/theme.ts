@@ -1,3 +1,5 @@
+import {red} from "next/dist/lib/picocolors";
+
 export const theme = {
     colors: {
         primary: '#003366',
@@ -7,6 +9,7 @@ export const theme = {
         light: '#F5F5F5',
         dark: '#007186',
         gray: '#707070',
+        alertRed: '#EE4B2B'
     },
     fonts: {
         hero: 'Avenir, sans-serif',
