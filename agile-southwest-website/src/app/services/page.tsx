@@ -8,6 +8,7 @@ import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import styled from "styled-components";
 import Image from "next/image";
 import {theme} from "@/app/constants/theme";
+import LargeImage from "@/app/components/largeImage";
 
 const webSectionContent = [
     "At Agile Southwest, we specialize in custom website development designed to meet" +
@@ -43,19 +44,6 @@ const hardWareServicesContent = [
 
 ]
 
-const ImageDiv = styled.img`
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    @media (min-width: ${theme.breakpoints.standardDesktop}) {
-        width: 85%;
-    }
-    @media (min-width: ${theme.breakpoints.largeDesktop}) {
-        width: 100%;
-    }
-`;
-
 const ServicesPage = () => {
 
     return (
@@ -73,7 +61,7 @@ const ServicesPage = () => {
                 <VerticalSpacingLarge/>
                 <InformationSection title="Comprehensive PC, Mac, and Electronics Repair Solutions" content={hardWareServicesContent}/>
                 <VerticalSpacingLarge/>
-                <ImageDiv src="/images/ragle_diamond.png"></ImageDiv>
+                <LargeImage imageUrl="/images/ragle_diamond.png"></LargeImage>
             </PageWrapper>
 
         </Layout>
