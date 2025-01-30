@@ -5,9 +5,6 @@ import {H1} from "@/app/components/text";
 import PageWrapper from "@/app/components/pageWrapper";
 import InformationSection from "@/app/components/InformationSection";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
-import styled from "styled-components";
-import Image from "next/image";
-import {theme} from "@/app/constants/theme";
 import LargeImage from "@/app/components/largeImage";
 
 const webSectionContent = [
