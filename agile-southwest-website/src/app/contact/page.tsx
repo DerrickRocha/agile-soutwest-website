@@ -2,7 +2,7 @@
 
 import Layout from "@/app/components/layout";
 import PageWrapper from "@/app/components/pageWrapper";
-import {H1, H2, H3} from "@/app/components/text";
+import {H1, H2} from "@/app/components/text";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import InformationSection from "@/app/components/InformationSection";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
@@ -185,7 +185,8 @@ const ContactPage = () => {
                         disabled={isSubmitting}
                     />
                 </Form>
-                {statusMessage && <H3>{statusMessage}</H3>}
+                <VerticalSpacingSmall/>
+                {statusMessage && <H2 textAlign={"center"}>{statusMessage}</H2>}
             </PageWrapper>
 
         </Layout>
