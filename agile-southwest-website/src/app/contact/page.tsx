@@ -2,13 +2,13 @@
 
 import Layout from "@/app/components/layout";
 import PageWrapper from "@/app/components/pageWrapper";
-import {H1, H2} from "@/app/components/text";
+import {H1, H2, H3} from "@/app/components/text";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import InformationSection from "@/app/components/InformationSection";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import styled from "styled-components";
 import {theme} from "@/app/constants/theme";
-import React from "react";
+import {useState} from "react";
 
 const subHeading = "Reach Out to Agile Southwest for Custom Solutions and Support"
 const content = [
@@ -78,13 +78,49 @@ const SubmitButton = styled.input`
     }
 `;
 
-const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault(); // Prevents the form from being submitted automatically
-    console.log('Form submitted');
-    // Your custom submit logic goes here (e.g., validation, API call)
-};
-
 const ContactPage = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [statusMessage, setStatusMessage] = useState("");
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const {name, value} = e.target;
+        setFormData((prev) => ({...prev, [name]: value}));
+    };
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+        setIsSubmitting(true)
+        setStatusMessage("")
+        try {
+            const response = await fetch(
+                "/api/submit-contact-form",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData)
+                }
+            )
+            const result = await response.json()
+            console.log(result)
+            if (response.ok) {
+                setStatusMessage("Your message has been sent successfully!")
+            } else {
+                setStatusMessage(result.error || "There was an error sending your message.");
+            }
+        } catch (error) {
+            setStatusMessage("An unexpected error occurred. Please try again.");
+            console.log(error)
+        } finally {
+            setIsSubmitting(false);  // Set submitting state to false when the request is finished
+        }
+    }
     return (
         <Layout>
             <PageWrapper>
@@ -106,26 +142,50 @@ const ContactPage = () => {
                         Name <span style={{color: theme.colors.alertRed}}>*</span>
                         <Input type="text"
                                name="name"
+                               value={formData.name}
+                               onChange={handleChange}
                                required={true}
                         />
                     </Label>
                     <VerticalSpacingSmall/>
                     <Label>
                         Phone <span style={{color: theme.colors.alertRed}}>*</span>
-                        <Input type="text" name="phone" required={true}/>
+                        <Input
+                            type="text"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required={true}
+                        />
                     </Label>
                     <VerticalSpacingSmall/>
                     <Label>
-                        Email <Input type="email" name="email"/>
+                        Email
+                        <Input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
                     </Label>
                     <VerticalSpacingSmall/>
                     <Label>
                         Message <span style={{color: theme.colors.alertRed}}>*</span>
-                        <TextArea name="message" required={true}/>
+                        <TextArea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required={true}
+                        />
                     </Label>
                     <VerticalSpacingSmall/>
-                    <SubmitButton type="submit" value="Submit"/>
+                    <SubmitButton
+                        type="submit"
+                        value={isSubmitting ? "Submitting..." : "Submit"}
+                        disabled={isSubmitting}
+                    />
                 </Form>
+                {statusMessage && <H3>{statusMessage}</H3>}
             </PageWrapper>
 
         </Layout>
