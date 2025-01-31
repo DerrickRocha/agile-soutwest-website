@@ -31,9 +31,9 @@ export async function POST(request: Request) {
     const clientIp = getClientIp(request);  // Get client IP using the helper function
     await rateLimiter.consume(clientIp);  // Consume points for this IP address
 
-    const { name, email, phone, message } = await request.json();
+    const {name, email, phone, message} = await request.json();
     if (!name || !email || !phone || message) {
-        const status = { status: 400}
+        const status = {status: 400}
         NextResponse.json("Email, Name, and Message are required.", status)
     }
     try {
@@ -41,8 +41,8 @@ export async function POST(request: Request) {
             {
                 service: "gmail",
                 auth: {
-                    user: 'drocha616@gmail.com',
-                    pass: 'qpym tgfn bynm vkwt'
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASS,
                 }
             }
         );
@@ -59,11 +59,11 @@ export async function POST(request: Request) {
             `,
         }
         await transporter.sendMail(mailOptions)
-        return NextResponse.json({ message: 'Form submitted successfully' });
+        return NextResponse.json({message: 'Form submitted successfully'});
     } catch (error) {
         console.error(error)
         if (error instanceof Error && error.message === 'Too many requests') {
-            return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
+            return NextResponse.json({error: 'Too many requests. Please try again later.'}, {status: 429});
         }
         return NextResponse.json({error: "Error sending email"}, {status: 500})
     }
