@@ -2,7 +2,7 @@ import {NextResponse} from "next/server";
 import nodemailer from 'nodemailer';
 import {RateLimiterMemory} from "rate-limiter-flexible";
 import { IsEmail, IsPhoneNumber, Length, validate } from 'class-validator';
-import xss from 'xss-clean'
+import xss from 'xss';  // Importing xss for sanitization
 // Define the expected structure for the form data
 interface ContactFormData {
     name: string;
@@ -10,23 +10,26 @@ interface ContactFormData {
     phone: string;
     message: string;
 }
+class EmailData {
+    @IsEmail()
+    email: string;
+    constructor(email: string) {
+        this.email = email
+    }
+}
 // Define a class to represent the form data structure
 class ContactForm {
     @Length(1, 50)
     name: string;
 
-    @IsEmail()
-    email: string;
-
-    @IsPhoneNumber()
+    @IsPhoneNumber("US")
     phone: string;
 
     @Length(1, 500)
     message: string;
 
-    constructor(name: string, email: string, phone: string, message: string) {
+    constructor(name: string,phone: string, message: string) {
         this.name = name;
-        this.email = email;
         this.phone = phone;
         this.message = message;
     }
@@ -41,7 +44,7 @@ const rateLimiter = new RateLimiterMemory({
 const sanitizeData = (data: ContactFormData) => {
     data.name = xss(data.name);
     data.email = xss(data.email);
-    data.phone = xss(data.phone);
+    data.phone = xss(data.phone.replace(/\D/g, ''));
     data.message = xss(data.message);
     return data;
 };
@@ -70,12 +73,14 @@ export async function POST(request: Request) {
     await rateLimiter.consume(clientIp);  // Consume points for this IP address
 
     const {name, email, phone, message} = await request.json();
+    if (!name || !phone || message) {
+        const status = {status: 400}
+        NextResponse.json("Name, phone, and Message are required.", status)
+    }
     const sanitizedData = sanitizeData({ name, email, phone, message });
-
     // Create an instance of the ContactForm class
     const contactForm = new ContactForm(
         sanitizedData.name,
-        sanitizedData.email,
         sanitizedData.phone,
         sanitizedData.message
     );
@@ -86,11 +91,14 @@ export async function POST(request: Request) {
         const errorMessages = errors.map(error => error.toString());
         return NextResponse.json({ error: `Validation failed: ${errorMessages.join(', ')}` }, { status: 400 });
     }
-
-    if (!name || !email || !phone || message) {
-        const status = {status: 400}
-        NextResponse.json("Email, Name, and Message are required.", status)
+    if (sanitizedData.email !== "") {
+        const emailErrors = await validate(new EmailData(sanitizedData.email))
+        if (emailErrors.length > 0) {
+            const emailErrorMessages = emailErrors.map(error => error.toString());
+            return NextResponse.json({ error: `Email validation failed: ${emailErrorMessages.join(', ')}` }, { status: 400 });
+        }
     }
+
     try {
         const transporter = nodemailer.createTransport(
             {
