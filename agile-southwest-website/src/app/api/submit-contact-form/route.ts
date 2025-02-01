@@ -1,12 +1,50 @@
 import {NextResponse} from "next/server";
 import nodemailer from 'nodemailer';
 import {RateLimiterMemory} from "rate-limiter-flexible";
+import { IsEmail, IsPhoneNumber, Length, validate } from 'class-validator';
+import xss from 'xss-clean'
+// Define the expected structure for the form data
+interface ContactFormData {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+}
+// Define a class to represent the form data structure
+class ContactForm {
+    @Length(1, 50)
+    name: string;
 
+    @IsEmail()
+    email: string;
+
+    @IsPhoneNumber()
+    phone: string;
+
+    @Length(1, 500)
+    message: string;
+
+    constructor(name: string, email: string, phone: string, message: string) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.message = message;
+    }
+}
 // Configure rate limiter
 const rateLimiter = new RateLimiterMemory({
     points: 5, // Number of requests allowed
     duration: 60, // Time window in seconds (1 minute)
 });
+
+// Helper function to sanitize the data
+const sanitizeData = (data: ContactFormData) => {
+    data.name = xss(data.name);
+    data.email = xss(data.email);
+    data.phone = xss(data.phone);
+    data.message = xss(data.message);
+    return data;
+};
 
 // Helper function to get IP address from headers
 const getClientIp = (request: Request): string => {
@@ -32,6 +70,23 @@ export async function POST(request: Request) {
     await rateLimiter.consume(clientIp);  // Consume points for this IP address
 
     const {name, email, phone, message} = await request.json();
+    const sanitizedData = sanitizeData({ name, email, phone, message });
+
+    // Create an instance of the ContactForm class
+    const contactForm = new ContactForm(
+        sanitizedData.name,
+        sanitizedData.email,
+        sanitizedData.phone,
+        sanitizedData.message
+    );
+
+    // Validate the sanitized data using class-validator
+    const errors = await validate(contactForm);
+    if (errors.length > 0) {
+        const errorMessages = errors.map(error => error.toString());
+        return NextResponse.json({ error: `Validation failed: ${errorMessages.join(', ')}` }, { status: 400 });
+    }
+
     if (!name || !email || !phone || message) {
         const status = {status: 400}
         NextResponse.json("Email, Name, and Message are required.", status)
