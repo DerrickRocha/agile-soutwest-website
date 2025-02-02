@@ -95,14 +95,13 @@ export async function POST(request: Request) {
     // Validate the sanitized data using class-validator
     const errors = await validate(contactForm);
     if (errors.length > 0) {
-        return NextResponse.json({ error: `Validation failed:` }, { status: 400 });
+        return NextResponse.json({ error: `Validation failed` }, { status: 400 });
     }
     // Validate email separately since email field is optional.
     if (sanitizedData.email !== "") {
         const emailErrors = await validate(new EmailData(sanitizedData.email))
         if (emailErrors.length > 0) {
-            const emailErrorMessages = emailErrors.map(error => error.toString());
-            return NextResponse.json({ error: `Email validation failed: ${emailErrorMessages.join(', ')}` }, { status: 400 });
+            return NextResponse.json({ error: `Email validation failed` }, { status: 400 });
         }
     }
 
