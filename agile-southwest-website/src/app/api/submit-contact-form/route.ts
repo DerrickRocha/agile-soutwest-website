@@ -34,13 +34,12 @@ class ContactForm {
         this.message = message;
     }
 }
-// Configure rate limiter
+
 const rateLimiter = new RateLimiterMemory({
     points: 5, // Number of requests allowed
     duration: 60, // Time window in seconds (1 minute)
 });
 
-// Helper function to sanitize the data
 const sanitizeData = (data: ContactFormData) => {
     data.name = xss(data.name);
     data.email = xss(data.email);

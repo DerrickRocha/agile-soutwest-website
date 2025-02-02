@@ -1,5 +1,3 @@
-import {red} from "next/dist/lib/picocolors";
-
 export const theme = {
     colors: {
         primary: '#003366',

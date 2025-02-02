@@ -3,7 +3,6 @@ import {theme} from "@/app/constants/theme";
 import React from "react";
 
 const FooterContainer = styled.header`
-    position: relative;
     width: 100%;
     background-color: ${theme.colors.primary};
     padding: 0px ${theme.padding.gutter};

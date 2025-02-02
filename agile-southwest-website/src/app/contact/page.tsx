@@ -15,7 +15,6 @@ const content = [
     "Have questions or need expert web development, mobile app solutions, or electronics repair services? Agile Southwest is here to help! Whether you’re looking for a custom website, a native Android or iOS app, or fast and reliable device repairs, our team is ready to assist. Contact us today to discuss your project, request a quote, or get expert support. Fill out the form below, call us, or send us a message—we’re here to provide the solutions your business needs to grow.",
 ]
 
-
 const Form = styled.form`
     display: block;
     flex-direction: column;
@@ -40,14 +39,14 @@ const Input = styled.input`
     background-color: #fff;
 
     &:focus {
-        border-color: ${theme.colors.secondary}; /* Change border color on focus */
+        border-color: ${theme.colors.secondary};
         outline: none;
     }
 `;
 
 const TextArea = styled.textarea`
     width: 100%;
-    height: 150px; /* Make the message input taller */
+    height: 150px;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid ${theme.colors.gray};
@@ -55,17 +54,17 @@ const TextArea = styled.textarea`
     font-size: 16px;
     color: #333;
     background-color: #fff;
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical;
     overflow: auto;
 
     &:focus {
-        border-color: ${theme.colors.secondary}; /* Change border color on focus */
+        border-color: ${theme.colors.secondary};
         outline: none;
     }
 `;
 
 const SubmitButton = styled.input`
-    background-color: ${theme.colors.primary}; /* Blue background for the submit button */
+    background-color: ${theme.colors.primary};
     color: white;
     padding: 12px 20px;
     border: none;
@@ -74,9 +73,14 @@ const SubmitButton = styled.input`
     cursor: pointer;
 
     &:hover {
-        background-color: ${theme.colors.secondary}; /* Darker blue on hover */
+        background-color: ${theme.colors.secondary};
     }
 `;
+
+interface StatusState {
+    type: "success" | "failure" | "invalidFieldError";
+    message: string;
+}
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -86,7 +90,7 @@ const ContactPage = () => {
         message: "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [statusMessage, setStatusMessage] = useState("");
+    const [statusState, setStatusState] = useState<StatusState | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
@@ -95,7 +99,7 @@ const ContactPage = () => {
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         setIsSubmitting(true)
-        setStatusMessage("")
+        setStatusState(null)
         try {
             const response = await fetch(
                 "/api/submit-contact-form",
@@ -108,17 +112,28 @@ const ContactPage = () => {
                 }
             )
             const result = await response.json()
-            console.log(result)
             if (response.ok) {
-                setStatusMessage("Your message has been sent successfully!")
+                setStatusState({type: "success", message: "Thank you! We will reach out to you shortly."});
             } else {
-                setStatusMessage(result.error || "There was an error sending your message.");
+                if (response.status === 400) {
+                    setStatusState({
+                        type: "invalidFieldError",
+                        message: "One of the mandatory fields is invalid. Please try again."
+                    })
+                } else if (response.status === 429) {
+                    setStatusState({type: "failure", message: "Too many requests. Please try again later"})
+                } else {
+                    setStatusState({
+                        type: "failure",
+                        message: result.error || "There was an error sending your message."
+                    });
+                }
             }
         } catch (error) {
-            setStatusMessage("An unexpected error occurred. Please try again.");
-            console.log(error)
+            console.error(error)
+            setStatusState({type: "failure", message: "An unexpected error occurred. Please try again."});
         } finally {
-            setIsSubmitting(false);  // Set submitting state to false when the request is finished
+            setIsSubmitting(false);
         }
     }
     return (
@@ -137,60 +152,72 @@ const ContactPage = () => {
                 <H2 textAlign={"center"}>
                     drocha616@gmail.com
                 </H2>
-                <Form onSubmit={handleSubmit}>
-                    <Label>
-                        Name <span style={{color: theme.colors.alertRed}}>*</span>
-                        <Input type="text"
-                               name="name"
-                               value={formData.name}
-                               onChange={handleChange}
-                               required={true}
+                {
+                    statusState &&
+                    <>
+                        <VerticalSpacingLarge/>
+                        <H2 textAlign={"center"}
+                            color={statusState.type === "success" ? undefined : "#EE4B2B"}
+                        >
+                            {statusState.message}
+                        </H2>
+                    </>
+                }
+                {
+                    statusState?.type !== "failure" && statusState?.type !== "success" &&
+                    <Form onSubmit={handleSubmit}>
+                        <Label>
+                            Name <span style={{color: theme.colors.alertRed}}>*</span>
+                            <Input type="text"
+                                   name="name"
+                                   value={formData.name}
+                                   onChange={handleChange}
+                                   required={true}
+                            />
+                        </Label>
+                        <VerticalSpacingSmall/>
+                        <Label>
+                            Phone <span style={{color: theme.colors.alertRed}}>*</span>
+                            <Input
+                                type="text"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required={true}
+                            />
+                        </Label>
+                        <VerticalSpacingSmall/>
+                        <Label>
+                            Email
+                            <Input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
+                        </Label>
+                        <VerticalSpacingSmall/>
+                        <Label>
+                            Message <span style={{color: theme.colors.alertRed}}>*</span>
+                            <TextArea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required={true}
+                            />
+                        </Label>
+                        <VerticalSpacingSmall/>
+                        <SubmitButton
+                            type="submit"
+                            value={isSubmitting ? "Submitting..." : "Submit"}
+                            disabled={isSubmitting}
                         />
-                    </Label>
-                    <VerticalSpacingSmall/>
-                    <Label>
-                        Phone <span style={{color: theme.colors.alertRed}}>*</span>
-                        <Input
-                            type="text"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            required={true}
-                        />
-                    </Label>
-                    <VerticalSpacingSmall/>
-                    <Label>
-                        Email
-                        <Input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-                    </Label>
-                    <VerticalSpacingSmall/>
-                    <Label>
-                        Message <span style={{color: theme.colors.alertRed}}>*</span>
-                        <TextArea
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            required={true}
-                        />
-                    </Label>
-                    <VerticalSpacingSmall/>
-                    <SubmitButton
-                        type="submit"
-                        value={isSubmitting ? "Submitting..." : "Submit"}
-                        disabled={isSubmitting}
-                    />
-                </Form>
-                <VerticalSpacingSmall/>
-                {statusMessage && <H2 textAlign={"center"}>{statusMessage}</H2>}
+                    </Form>
+                }
             </PageWrapper>
 
         </Layout>
     );
-};
+}
 
 export default ContactPage;

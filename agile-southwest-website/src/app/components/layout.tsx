@@ -12,18 +12,22 @@ interface LayoutProps {
 const LayoutContainer = styled.div`
     background-color: ${theme.colors.light};
     width: 100%;
+    display: flex;            /* Use flexbox */
+    flex-direction: column;   /* Stack elements vertically */
+    min-height: 100vh;
 `;
-const Main = styled.div`
-   
+
+const MainContent = styled.main`
+    flex-grow: 1; /* Allow the main content to grow and take available space */
 `;
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <LayoutContainer>
             <Header/>
-            <Main>
+            <MainContent>
                 {children}
-            </Main>
+            </MainContent>
 
             <Footer/>
         </LayoutContainer>
