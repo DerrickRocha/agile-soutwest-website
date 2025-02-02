@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 import {RateLimiterMemory} from "rate-limiter-flexible";
 import { IsEmail, IsPhoneNumber, Length, validate } from 'class-validator';
 import xss from 'xss';  // Importing xss for sanitization
-// Define the expected structure for the form data
+
 interface ContactFormData {
     name: string;
     email: string;
@@ -17,7 +17,7 @@ class EmailData {
         this.email = email
     }
 }
-// Define a class to represent the form data structure
+
 class ContactForm {
     @Length(1, 50)
     name: string;
@@ -79,13 +79,13 @@ const transporter = nodemailer.createTransport(
 
 export async function POST(request: Request) {
     // Check rate limit
-    const clientIp = getClientIp(request);  // Get client IP using the helper function
-    await rateLimiter.consume(clientIp);  // Consume points for this IP address
+    const clientIp = getClientIp(request);
+    await rateLimiter.consume(clientIp);
 
     const {name, email, phone, message} = await request.json();
 
     const sanitizedData = sanitizeData({ name, email, phone, message });
-    // Create an instance of the ContactForm class
+
     const contactForm = new ContactForm(
         sanitizedData.name,
         sanitizedData.phone,
@@ -95,8 +95,7 @@ export async function POST(request: Request) {
     // Validate the sanitized data using class-validator
     const errors = await validate(contactForm);
     if (errors.length > 0) {
-        const errorMessages = errors.map(error => error.toString());
-        return NextResponse.json({ error: `Validation failed: ${errorMessages.join(', ')}` }, { status: 400 });
+        return NextResponse.json({ error: `Validation failed:` }, { status: 400 });
     }
     // Validate email separately since email field is optional.
     if (sanitizedData.email !== "") {
