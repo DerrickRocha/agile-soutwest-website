@@ -67,16 +67,23 @@ const getClientIp = (request: Request): string => {
     return '127.0.0.1';
 };
 
+const transporter = nodemailer.createTransport(
+    {
+        service: "gmail",
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+        }
+    }
+);
+
 export async function POST(request: Request) {
     // Check rate limit
     const clientIp = getClientIp(request);  // Get client IP using the helper function
     await rateLimiter.consume(clientIp);  // Consume points for this IP address
 
     const {name, email, phone, message} = await request.json();
-    if (!name || !phone || message) {
-        const status = {status: 400}
-        NextResponse.json("Name, phone, and Message are required.", status)
-    }
+
     const sanitizedData = sanitizeData({ name, email, phone, message });
     // Create an instance of the ContactForm class
     const contactForm = new ContactForm(
@@ -91,6 +98,7 @@ export async function POST(request: Request) {
         const errorMessages = errors.map(error => error.toString());
         return NextResponse.json({ error: `Validation failed: ${errorMessages.join(', ')}` }, { status: 400 });
     }
+    // Validate email separately since email field is optional.
     if (sanitizedData.email !== "") {
         const emailErrors = await validate(new EmailData(sanitizedData.email))
         if (emailErrors.length > 0) {
@@ -100,15 +108,6 @@ export async function POST(request: Request) {
     }
 
     try {
-        const transporter = nodemailer.createTransport(
-            {
-                service: "gmail",
-                auth: {
-                    user: process.env.EMAIL_USER,
-                    pass: process.env.EMAIL_PASS,
-                }
-            }
-        );
         const mailOptions = {
             from: email,
             to: "drocha616@gmail.com",
