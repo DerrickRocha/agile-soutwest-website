@@ -12,28 +12,28 @@ import PageWrapper from "@/app/components/pageWrapper";
 
 const HeroContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr; /* Single column layout */
-    grid-template-rows: 1fr; /* Single row layout */
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr; 
     width: 100%;
     height: 920px;
 `;
 
 const Overlay = styled.div`
-    grid-column: 1 / -1; /* Span across all columns */
-    grid-row: 1; /* Span across all rows */
+    grid-column: 1 / -1; 
+    grid-row: 1; 
     background-color: rgba(0, 51, 102, 0.8);
     width: 100%;
-    height: 100%; /* Make the overlay cover the full container */
+    height: 100%; 
 `;
 
 const OverlayTextContainer = styled.div`
-    grid-column: 1 / -1; /* Span across all columns */
-    grid-row: 1; /* Span across all rows */
+    grid-column: 1 / -1; 
+    grid-row: 1; 
     padding: 0 ${theme.padding.gutter};
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center the text */
-    align-items: start; /* Horizontally center the text */
+    justify-content: center; 
+    align-items: start; 
     text-align: left;
 
     @media (max-width: ${theme.breakpoints.smallDesktop}) {
@@ -52,8 +52,8 @@ const OverlayTextContainer = styled.div`
 `;
 
 const FixedImage = styled.div`
-    grid-column: 1 / -1; /* Span across all columns */
-    grid-row: 1; /* Span across all rows */
+    grid-column: 1 / -1;
+    grid-row: 1; 
     background-image: url('/images/agile-methodology-machine-learning.png');
     background-size: cover;
     background-position: center;

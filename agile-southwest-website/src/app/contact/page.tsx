@@ -19,7 +19,7 @@ const Form = styled.form`
     display: block;
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px; /* Space between each form element */
+    gap: 15px; 
     margin-top: 20px;
 `;
 
