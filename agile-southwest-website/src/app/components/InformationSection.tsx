@@ -19,7 +19,7 @@ const InformationSection: React.FC<InformationSectionProps> = ({title, content}:
 }) => {
     return (
         <Container>
-            <H2 textAlign={'center'}>
+            <H2 $textAlign={'center'}>
                 {title}
             </H2>
             <VerticalSpacingSmall/>

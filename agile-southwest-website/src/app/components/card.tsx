@@ -50,7 +50,7 @@ export default function Card({image, body, heading}: CardProps) {
             </RoundedImage>
             <VerticalSpacingSmall/>
             <HeaderStyling>
-                <H2 color={theme.colors.primary} textAlign={'center'}>
+                <H2 color={theme.colors.primary} $textAlign={'center'}>
                     {heading}
                 </H2>
             </HeaderStyling>

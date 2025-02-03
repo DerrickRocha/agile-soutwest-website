@@ -115,7 +115,7 @@ const HomeServicesCardsDiv = styled.div`
 function HomeServicesSection() {
     return (
         <HomeServicesDiv>
-            <H1 color={theme.colors.primary} textAlign={'center'}>
+            <H1 color={theme.colors.primary} $textAlign={'center'}>
                 Comprehensive Services to Drive Your Success
             </H1>
 
@@ -185,7 +185,7 @@ function HomeAboutSection() {
             <AboutSectionImageDiv/>
             <AboutSectionTextDiv>
                 <VerticalSpacingSmall/>
-                <H1 textAlign={'center'}>
+                <H1 $textAlign={'center'}>
                     Delivering Custom Solutions For Small Business Growth
                 </H1>
 
@@ -201,12 +201,12 @@ function HomeAboutSection() {
                     Whether you’re looking for a complete website redesign, a robust Android or iOS app, or
                     reliable PC, Mac, and electronics repairs, we’re here to turn your vision into reality.
                     In addition to software solutions, we also provide professional soldering services for
-                    electronics, including power terminals and various components. Whether you're dealing with
+                    electronics, including power terminals and various components. Whether you&#39;re dealing with
                     damaged power connections, broken terminals, or other small electronic repairs, our experienced
                     team is equipped to help.
                     We pride ourselves on offering personalized, cost-effective solutions that support your
                     business goals. At Agile Southwest, our mission is to combine cutting-edge technology
-                    with a deep understanding of our clients' needs to help them achieve lasting success.
+                    with a deep understanding of our clients&#39; needs to help them achieve lasting success.
                     Let us be your partner in driving digital transformation, optimizing your business
                     operations, and growing your brand.
                 </Body>

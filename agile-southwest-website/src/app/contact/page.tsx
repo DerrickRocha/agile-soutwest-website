@@ -139,24 +139,24 @@ const ContactPage = () => {
     return (
         <Layout>
             <PageWrapper>
-                <H1 textAlign={'center'}>
+                <H1 $textAlign={'center'}>
                     Contact Agile Southwest
                 </H1>
                 <VerticalSpacingLarge/>
                 <InformationSection title={subHeading} content={content}/>
                 <VerticalSpacingLarge/>
-                <H2 textAlign={"center"}>
+                <H2 $textAlign={"center"}>
                     505-310-0331
                 </H2>
                 <VerticalSpacingSmall/>
-                <H2 textAlign={"center"}>
+                <H2 $textAlign={"center"}>
                     drocha616@gmail.com
                 </H2>
                 {
                     statusState &&
                     <>
                         <VerticalSpacingLarge/>
-                        <H2 textAlign={"center"}
+                        <H2 $textAlign={"center"}
                             color={statusState.type === "success" ? undefined : "#EE4B2B"}
                         >
                             {statusState.message}

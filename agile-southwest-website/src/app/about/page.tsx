@@ -18,7 +18,7 @@ const AboutPage = () => {
     return (
         <Layout>
             <PageWrapper>
-                <H1 textAlign={'center'}>
+                <H1 $textAlign={'center'}>
                     About Agile Southwest
                 </H1>
                 <VerticalSpacingLarge/>
