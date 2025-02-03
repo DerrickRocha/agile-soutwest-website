@@ -4,7 +4,7 @@ import {theme} from "@/app/constants/theme";
 interface TextProps {
     fontFamily?: string;
     color?: string;
-    textAlign?: string;
+    $textAlign?: string;
     children: React.ReactNode;
 }
 
@@ -23,7 +23,7 @@ const StyledHero2 = styled.h1<TextProps>`
 const StyleH1 = styled.h1<TextProps>`
     font-size: ${theme.textSize.heading1};
     font-family: ${theme.fonts.arial};
-    text-align: ${({textAlign}) => textAlign || 'left'};
+    text-align: ${({$textAlign}) => $textAlign || 'left'};
     color: ${({color}) => color || theme.colors.primary}; 
     font-weight: bold;
 `;
@@ -31,7 +31,7 @@ const StyleH1 = styled.h1<TextProps>`
 const StyleH2 = styled.h2<TextProps>`
     font-size: ${theme.textSize.heading2};
     font-family: ${theme.fonts.arial};
-    text-align: ${({textAlign}) => textAlign || 'left'};
+    text-align: ${({$textAlign}) => $textAlign || 'left'};
     color: ${({color}) => color || theme.colors.primary}; 
     font-weight: bold;
 `;
@@ -46,7 +46,7 @@ const StyleBody = styled.text<TextProps>`
     font-size: ${theme.textSize.bodyLarge};
     font-family: ${({fontFamily}) => fontFamily || 'Roboto, sans-serif'};
     color: ${({color}) => color || theme.colors.gray};
-    text-align: ${({textAlign}) => textAlign || 'left'};
+    text-align: ${({$textAlign}) => $textAlign || 'left'};
 `;
 
 export default function Hero1Text({ fontFamily, color, children }: TextProps) {
@@ -65,17 +65,17 @@ export function Hero2Text({ fontFamily, color, children }: TextProps) {
     );
 }
 
-export function H1({ color, textAlign, children }: TextProps) {
+export function H1({ color, $textAlign, children }: TextProps) {
     return (
-        <StyleH1 color={color} textAlign={textAlign}>
+        <StyleH1 color={color} $textAlign={$textAlign}>
             {children}
         </StyleH1>
     );
 }
 
-export function H2({ color, textAlign, children }: TextProps) {
+export function H2({ color, $textAlign, children }: TextProps) {
     return (
-        <StyleH2 color={color} textAlign={textAlign}>
+        <StyleH2 color={color} $textAlign={$textAlign}>
             {children}
         </StyleH2>
     );
@@ -89,9 +89,9 @@ export function H3({ color, children }: TextProps) {
     );
 }
 
-export function Body({ color, children, fontFamily, textAlign}: TextProps) {
+export function Body({ color, children, fontFamily, $textAlign}: TextProps) {
     return (
-        <StyleBody color={color} fontFamily={fontFamily} textAlign={textAlign}>
+        <StyleBody color={color} fontFamily={fontFamily} $textAlign={$textAlign}>
             {children}
         </StyleBody>
     );

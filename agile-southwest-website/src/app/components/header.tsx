@@ -41,12 +41,12 @@ const NavList = styled.ul`
     }
 `;
 
-const NavItem = styled.li<{ isActive: boolean }>`
+const NavItem = styled.li<{ $isactive: boolean }>`
     display: inline;
     font-size: ${theme.textSize.links};
     font-family: ${theme.fonts.links};
     font-weight: bold;
-    color: ${({ isActive }) => (isActive ? theme.colors.secondary : theme.colors.white)};
+    color: ${({ $isactive }) => ($isactive ? theme.colors.secondary : theme.colors.white)};
 `;
 
 // Hamburger menu icon, which appears on smaller screens
@@ -98,16 +98,16 @@ export default function Header() {
                     </Link>
                 </LogoContainer>
                 <NavList>
-                    <NavItem isActive={pathname === "/"}>
+                    <NavItem $isactive={pathname === "/"}>
                         <Link href="/">Home</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/services"}>
+                    <NavItem $isactive={pathname === "/services"}>
                         <Link href="/services">Services</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/about"}>
+                    <NavItem $isactive={pathname === "/about"}>
                         <Link href="/about">About</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/contact"}>
+                    <NavItem $isactive={pathname === "/contact"}>
                         <Link href="/contact">Contact</Link>
                     </NavItem>
                 </NavList>
@@ -121,16 +121,16 @@ export default function Header() {
                     />
                 </MenuIcon>
                 <MobileNavList $isOpen={isMenuOpen}> {}
-                    <NavItem isActive={pathname === "/"}>
+                    <NavItem $isactive={pathname === "/"}>
                         <Link href="/">Home</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/services"}>
+                    <NavItem $isactive={pathname === "/services"}>
                         <Link href="/services">Services</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/about"}>
+                    <NavItem $isactive={pathname === "/about"}>
                         <Link href="/about">About</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/contact"}>
+                    <NavItem $isactive={pathname === "/contact"}>
                         <Link href="/contact">Contact</Link>
                     </NavItem>
                 </MobileNavList>
