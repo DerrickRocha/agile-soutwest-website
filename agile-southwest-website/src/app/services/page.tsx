@@ -46,7 +46,7 @@ const ServicesPage = () => {
     return (
         <Layout>
             <PageWrapper>
-                <H1 textAlign={'center'}>
+                <H1 $textAlign={'center'}>
                     Custom Web Development, Mobile App Development, and Repair Services
                 </H1>
                 <VerticalSpacingLarge/>
