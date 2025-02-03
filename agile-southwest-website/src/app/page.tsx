@@ -110,10 +110,6 @@ const HomeServicesCardsDiv = styled.div`
         display: grid; 
         grid-template-columns: repeat(2, 1fr); 
     }
-    @media (max-width: ${theme.breakpoints.mobile}) {
-        grid-template-columns: repeat(1, 1fr);
-        gap: ${theme.padding.verticalDivSpacingSmall};
-    }
 `;
 
 function HomeServicesSection() {
@@ -181,8 +177,6 @@ const AboutSectionImageDiv = styled.div`
 const AboutSectionTextDiv = styled.div`
     width: 100%;
     padding: 0 ${theme.padding.cardBodyPadding};
-    @media (max-width: ${theme.breakpoints.tablet}) {
-    }
 `;
 
 function HomeAboutSection() {
@@ -225,12 +219,7 @@ function HomeAboutSection() {
 const HomeImagesDiv = styled.div`
     display: flex; 
     gap: ${theme.padding.cardSpacing};
-    @media (max-width: ${theme.breakpoints.mobile}) {
-        flex-direction: column;
-        gap: ${theme.padding.verticalDivSpacingSmall};
-    }
 `;
-
 
 const RoundedImage = styled.img`
     border-radius: ${theme.dimensions.borderRadius};  
