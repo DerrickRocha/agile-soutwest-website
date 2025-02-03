@@ -11,52 +11,57 @@ import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import PageWrapper from "@/app/components/pageWrapper";
 
 const HeroContainer = styled.div`
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr; 
     width: 100%;
     height: 920px;
 `;
 
 const Overlay = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 920px;
+    grid-column: 1 / -1; 
+    grid-row: 1; 
     background-color: rgba(0, 51, 102, 0.8);
-    z-index: 1;
+    width: 100%;
+    height: 100%; 
 `;
 
 const OverlayTextContainer = styled.div`
-    position: absolute;
-    top: 40%;
+    grid-column: 1 / -1; 
+    grid-row: 1; 
     padding: 0 ${theme.padding.gutter};
-    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: start; 
     text-align: left;
-    z-index: 2;
-    @media (max-width: ${theme.breakpoints.smallDesktop}) {
-        width: 100%;  
-        top: 30%;
 
+    @media (max-width: ${theme.breakpoints.smallDesktop}) {
+        width: 100%;
     }
     @media (max-width: ${theme.breakpoints.tablet}) {
-        width: 100%;  
-        top: 20%;
-        text-align: center; 
+        width: 100%;
+        text-align: center;
+        align-items: center;
     }
     @media (max-width: ${theme.breakpoints.mobile}) {
-        top: ${theme.padding.verticalDivSpacingLarge};
-        width: 100%;  
+        width: 100%;
+        text-align: center;
+        align-items: center;
     }
 `;
 
 const FixedImage = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 920px;
+    grid-column: 1 / -1;
+    grid-row: 1; 
     background-image: url('/images/agile-methodology-machine-learning.png');
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    z-index: 0;
+    width: 100%;
+    height: 100%;
 `;
+
 
 function Home() {
     return (
@@ -92,7 +97,6 @@ function HomeHeroSection() {
 }
 
 const HomeServicesDiv = styled.div`
-    position: relative;
     width: 100%;
 `;
 
@@ -105,10 +109,6 @@ const HomeServicesCardsDiv = styled.div`
     @media (max-width: ${theme.breakpoints.smallDesktop}) {
         display: grid; 
         grid-template-columns: repeat(2, 1fr); 
-    }
-    @media (max-width: ${theme.breakpoints.mobile}) {
-        grid-template-columns: repeat(1, 1fr);
-        gap: ${theme.padding.verticalDivSpacingSmall};
     }
 `;
 
@@ -177,8 +177,6 @@ const AboutSectionImageDiv = styled.div`
 const AboutSectionTextDiv = styled.div`
     width: 100%;
     padding: 0 ${theme.padding.cardBodyPadding};
-    @media (max-width: ${theme.breakpoints.tablet}) {
-    }
 `;
 
 function HomeAboutSection() {
@@ -221,12 +219,7 @@ function HomeAboutSection() {
 const HomeImagesDiv = styled.div`
     display: flex; 
     gap: ${theme.padding.cardSpacing};
-    @media (max-width: ${theme.breakpoints.mobile}) {
-        flex-direction: column;
-        gap: ${theme.padding.verticalDivSpacingSmall};
-    }
 `;
-
 
 const RoundedImage = styled.img`
     border-radius: ${theme.dimensions.borderRadius};  

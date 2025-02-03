@@ -7,6 +7,7 @@ export const theme = {
         light: '#F5F5F5',
         dark: '#007186',
         gray: '#707070',
+        alertRed: '#EE4B2B'
     },
     fonts: {
         hero: 'Avenir, sans-serif',
@@ -52,8 +53,9 @@ export const theme = {
         heading1: '28px',
         heading2: '22px',
         heading3: '18px',
-        subHeading: '14px',
-        body: '18px',
+        smallBody: '12px',
+        bodyRegular: '14px',
+        bodyLarge: '18px',
         links: '18px'
     }
 };
