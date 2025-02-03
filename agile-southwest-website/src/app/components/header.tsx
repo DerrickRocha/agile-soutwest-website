@@ -69,7 +69,7 @@ const MobileNavList = styled.ul<{ $isOpen?: boolean }>`
     top: 80px;
     right: 0;
     padding: 10px;
-    display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')}; // Use transient prop
+    display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')}; 
 
     @media (min-width: 769px) {
         display: none;
@@ -78,7 +78,7 @@ const MobileNavList = styled.ul<{ $isOpen?: boolean }>`
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const pathname = usePathname();  // Use usePathname to get current path
+    const pathname = usePathname();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -98,16 +98,16 @@ export default function Header() {
                     </Link>
                 </LogoContainer>
                 <NavList>
-                    <NavItem isActive={pathname === "/"}>  {/* Active Link Styling */}
+                    <NavItem isActive={pathname === "/"}>
                         <Link href="/">Home</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/services"}>  {/* Active Link Styling */}
+                    <NavItem isActive={pathname === "/services"}>
                         <Link href="/services">Services</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/about"}>  {/* Active Link Styling */}
+                    <NavItem isActive={pathname === "/about"}>
                         <Link href="/about">About</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/contact"}>  {/* Active Link Styling */}
+                    <NavItem isActive={pathname === "/contact"}>
                         <Link href="/contact">Contact</Link>
                     </NavItem>
                 </NavList>
@@ -121,16 +121,16 @@ export default function Header() {
                     />
                 </MenuIcon>
                 <MobileNavList $isOpen={isMenuOpen}> {}
-                    <NavItem isActive={pathname === "/"}>  {/* Active Link Styling */}
+                    <NavItem isActive={pathname === "/"}>
                         <Link href="/">Home</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/services"}>  {/* Active Link Styling */}
+                    <NavItem isActive={pathname === "/services"}>
                         <Link href="/services">Services</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/about"}>  {/* Active Link Styling */}
+                    <NavItem isActive={pathname === "/about"}>
                         <Link href="/about">About</Link>
                     </NavItem>
-                    <NavItem isActive={pathname === "/contact"}>  {/* Active Link Styling */}
+                    <NavItem isActive={pathname === "/contact"}>
                         <Link href="/contact">Contact</Link>
                     </NavItem>
                 </MobileNavList>

@@ -12,8 +12,8 @@ interface LayoutProps {
 const LayoutContainer = styled.div`
     background-color: ${theme.colors.light};
     width: 100%;
-    display: flex;            /* Use flexbox */
-    flex-direction: column;   /* Stack elements vertically */
+    display: flex;           
+    flex-direction: column;   
     min-height: 100vh;
 `;
 
