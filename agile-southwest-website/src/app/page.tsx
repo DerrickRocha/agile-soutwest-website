@@ -11,52 +11,57 @@ import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import PageWrapper from "@/app/components/pageWrapper";
 
 const HeroContainer = styled.div`
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: 1fr; /* Single row layout */
     width: 100%;
     height: 920px;
 `;
 
 const Overlay = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 920px;
+    grid-column: 1 / -1; /* Span across all columns */
+    grid-row: 1; /* Span across all rows */
     background-color: rgba(0, 51, 102, 0.8);
-    z-index: 1;
+    width: 100%;
+    height: 100%; /* Make the overlay cover the full container */
 `;
 
 const OverlayTextContainer = styled.div`
-    position: absolute;
-    top: 40%;
+    grid-column: 1 / -1; /* Span across all columns */
+    grid-row: 1; /* Span across all rows */
     padding: 0 ${theme.padding.gutter};
-    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the text */
+    align-items: start; /* Horizontally center the text */
     text-align: left;
-    z-index: 2;
-    @media (max-width: ${theme.breakpoints.smallDesktop}) {
-        width: 100%;  
-        top: 30%;
 
+    @media (max-width: ${theme.breakpoints.smallDesktop}) {
+        width: 100%;
     }
     @media (max-width: ${theme.breakpoints.tablet}) {
-        width: 100%;  
-        top: 20%;
-        text-align: center; 
+        width: 100%;
+        text-align: center;
+        align-items: center;
     }
     @media (max-width: ${theme.breakpoints.mobile}) {
-        top: ${theme.padding.verticalDivSpacingLarge};
-        width: 100%;  
+        width: 100%;
+        text-align: center;
+        align-items: center;
     }
 `;
 
 const FixedImage = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 920px;
+    grid-column: 1 / -1; /* Span across all columns */
+    grid-row: 1; /* Span across all rows */
     background-image: url('/images/agile-methodology-machine-learning.png');
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    z-index: 0;
+    width: 100%;
+    height: 100%;
 `;
+
 
 function Home() {
     return (
@@ -92,7 +97,6 @@ function HomeHeroSection() {
 }
 
 const HomeServicesDiv = styled.div`
-    position: relative;
     width: 100%;
 `;
 
