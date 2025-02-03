@@ -10,6 +10,13 @@ const HeaderContainer = styled.header`
     background-color: ${theme.colors.primary};
     padding: 0px ${theme.padding.gutter};
     height: ${theme.dimensions.headerHeight};
+    @media (max-width: ${theme.breakpoints.largeDesktop}) {
+        padding: 0 ${theme.padding.gutter};
+    }
+
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        padding: 0 ${theme.padding.mobileGutter};
+    }
 `;
 
 const Nav = styled.nav`
