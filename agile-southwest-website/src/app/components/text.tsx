@@ -43,9 +43,10 @@ const StyleH3 = styled.h3<TextProps>`
 `;
 
 const StyleBody = styled.text<TextProps>`
-    font-size: ${theme.textSize.body};
-    font-family: ${theme.fonts.roboto};
-    color: ${({color}) => color || theme.colors.gray}; 
+    font-size: ${theme.textSize.bodyLarge};
+    font-family: ${({fontFamily}) => fontFamily || 'Roboto, sans-serif'};
+    color: ${({color}) => color || theme.colors.gray};
+    text-align: ${({textAlign}) => textAlign || 'left'};
 `;
 
 export default function Hero1Text({ fontFamily, color, children }: TextProps) {
@@ -88,9 +89,9 @@ export function H3({ color, children }: TextProps) {
     );
 }
 
-export function Body({ color, children }: TextProps) {
+export function Body({ color, children, fontFamily, textAlign}: TextProps) {
     return (
-        <StyleBody color={color}>
+        <StyleBody color={color} fontFamily={fontFamily} textAlign={textAlign}>
             {children}
         </StyleBody>
     );
