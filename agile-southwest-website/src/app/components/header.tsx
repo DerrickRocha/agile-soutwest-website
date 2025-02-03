@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Image from 'next/image';
 import { theme } from "@/app/constants/theme";
+import { usePathname } from 'next/navigation'; // Import usePathname hook
 
 const HeaderContainer = styled.header`
     background-color: ${theme.colors.primary};
@@ -36,15 +37,16 @@ const NavList = styled.ul`
     gap: ${theme.dimensions.navListGap};
     margin-bottom: ${theme.dimensions.navListBottomMargin};
     @media (max-width: ${theme.breakpoints.tablet}) {
-        display: none;  
+        display: none;
     }
 `;
 
-const NavItem = styled.li`
+const NavItem = styled.li<{ isActive: boolean }>`
     display: inline;
     font-size: ${theme.textSize.links};
     font-family: ${theme.fonts.links};
     font-weight: bold;
+    color: ${({ isActive }) => (isActive ? theme.colors.secondary : theme.colors.white)};
 `;
 
 // Hamburger menu icon, which appears on smaller screens
@@ -54,7 +56,7 @@ const MenuIcon = styled.div`
     align-self: center;
 
     @media (max-width: ${theme.breakpoints.tablet}) {
-        display: block;  
+        display: block;
     }
 `;
 
@@ -70,12 +72,13 @@ const MobileNavList = styled.ul<{ $isOpen?: boolean }>`
     display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')}; // Use transient prop
 
     @media (min-width: 769px) {
-        display: none;  
+        display: none;
     }
 `;
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();  // Use usePathname to get current path
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -95,16 +98,16 @@ export default function Header() {
                     </Link>
                 </LogoContainer>
                 <NavList>
-                    <NavItem>
+                    <NavItem isActive={pathname === "/"}>  {/* Active Link Styling */}
                         <Link href="/">Home</Link>
                     </NavItem>
-                    <NavItem>
+                    <NavItem isActive={pathname === "/services"}>  {/* Active Link Styling */}
                         <Link href="/services">Services</Link>
                     </NavItem>
-                    <NavItem>
+                    <NavItem isActive={pathname === "/about"}>  {/* Active Link Styling */}
                         <Link href="/about">About</Link>
                     </NavItem>
-                    <NavItem>
+                    <NavItem isActive={pathname === "/contact"}>  {/* Active Link Styling */}
                         <Link href="/contact">Contact</Link>
                     </NavItem>
                 </NavList>
@@ -118,16 +121,16 @@ export default function Header() {
                     />
                 </MenuIcon>
                 <MobileNavList $isOpen={isMenuOpen}> {}
-                    <NavItem>
+                    <NavItem isActive={pathname === "/"}>  {/* Active Link Styling */}
                         <Link href="/">Home</Link>
                     </NavItem>
-                    <NavItem>
+                    <NavItem isActive={pathname === "/services"}>  {/* Active Link Styling */}
                         <Link href="/services">Services</Link>
                     </NavItem>
-                    <NavItem>
+                    <NavItem isActive={pathname === "/about"}>  {/* Active Link Styling */}
                         <Link href="/about">About</Link>
                     </NavItem>
-                    <NavItem>
+                    <NavItem isActive={pathname === "/contact"}>  {/* Active Link Styling */}
                         <Link href="/contact">Contact</Link>
                     </NavItem>
                 </MobileNavList>
