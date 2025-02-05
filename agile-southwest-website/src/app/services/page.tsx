@@ -58,7 +58,7 @@ const ServicesPage = () => {
                 <VerticalSpacingLarge/>
                 <InformationSection title="Comprehensive PC, Mac, and Electronics Repair Solutions" content={hardWareServicesContent}/>
                 <VerticalSpacingLarge/>
-                <LargeImage imageUrl="/images/ragle_diamond.webp"></LargeImage>
+                <LargeImage imageUrl="/images/optimized_ragle_diamond.webp"></LargeImage>
             </PageWrapper>
 
         </Layout>
