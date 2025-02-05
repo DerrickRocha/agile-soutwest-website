@@ -1,14 +1,12 @@
 import styled from "styled-components";
-import Image from "next/image";
-import { theme } from "@/app/constants/theme";
+import {theme} from "@/app/constants/theme";
 
 interface LargeImageProps {
     imageUrl: string;
 }
 
-const StyledImage = styled(Image)`
+const ImageDiv = styled.img`
     width: 100%;
-    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -21,13 +19,10 @@ const StyledImage = styled(Image)`
     }
 `;
 
-export default function LargeImage({ imageUrl }: LargeImageProps) {
+export default function LargeImage(props: LargeImageProps) {
     return (
-        <StyledImage
-            src={imageUrl}
-            alt="Large Image"
-            width={1400} // Adjust based on actual image size
-            height={800}  // Adjust based on aspect ratio
-        />
+        <ImageDiv src={props.imageUrl}/>
     );
 }
+
+
