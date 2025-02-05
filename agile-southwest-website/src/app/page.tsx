@@ -70,7 +70,7 @@ const OverlayTextContainer = styled.div`
 const FixedImage = styled.div`
     grid-column: 1 / -1;
     grid-row: 1; 
-    background-image: url('/images/optimized_agile-methodology-machine-learning.webp');
+    //background-image: url('/images/optimized_agile-methodology-machine-learning.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -133,22 +133,22 @@ function HomeServicesSection() {
             <VerticalSpacingSmall/>
             <HomeServicesCardsDiv>
                 <Card
-                    image='/images/website_development.webp'
+                    image='/images1/website_development.webp'
                     heading='Web Development'
                     body='Custom website development to help small businesses grow with responsive SEO-friendly designs that drive results.'>
                 </Card>
                 <Card
-                    image='/images/native_android_and_ios_development.webp'
+                    image='/images/1native_android_and_ios_development.webp'
                     heading='Native Android & iOS Development'
                     body='Native Android & iOS app development for small businesses, delivering fast, user-friendly apps that enhance customer engagement and drive growth.'>
                 </Card>
                 <Card
-                    image='/images/mobile_device_screen_repair.webp'
+                    image='/images/1mobile_device_screen_repair.webp'
                     heading='Mobile Device Screen Replacement'
                     body='Professional mobile device screen replacement services, offfering fast, reliable repairs for cracked or damaged screens on all major brands.'>
                 </Card>
                 <Card
-                    image='/images/pc_mac_and_electronics_repair.webp'
+                    image='/images/1pc_mac_and_electronics_repair.webp'
                     heading='PC, Mac, and Electronics Repair'
                     body='Expert PC, Mac, and electronics repair services, providing fast, reliable solutions for hardware, software, and device issues on all major brands.'>
                 </Card>
@@ -170,7 +170,7 @@ const AboutSectionDiv = styled.div`
 
 const AboutSectionImageDiv = styled.div`
     width: 100%;
-    background-image: url('/images/optimized_home_about_section_image.webp');
+    //background-image: url('/images/optimized_home_about_section_image.webp');
     background-repeat: no-repeat; 
     border-radius: 8px;
     @media (max-width: ${theme.breakpoints.tablet}) {
@@ -233,9 +233,9 @@ const RoundedImage = styled.img`
 function HomeImagesSection() {
     return (
         <HomeImagesDiv>
-            <RoundedImage src="/images/optimized_neural_network1.webp" alt="Neural network image"/>
-            <RoundedImage src="/images/web_development.webp" alt="Web development image"/>
-            <RoundedImage src="/images/soldering.webp" alt="Web development image"/>
+            <RoundedImage src="/images/1optimized_neural_network1.webp" alt="Neural network image"/>
+            <RoundedImage src="/images/1web_development.webp" alt="Web development image"/>
+            <RoundedImage src="/images/1soldering.webp" alt="Web development image"/>
 
         </HomeImagesDiv>
     );
