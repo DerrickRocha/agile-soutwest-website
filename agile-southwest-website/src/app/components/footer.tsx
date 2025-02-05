@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import {theme} from "@/app/constants/theme";
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 
 const FooterContainer = styled.div`
     display: flex;
@@ -47,15 +45,7 @@ const white = theme.colors.white
 export default function Footer() {
     return (
         <FooterContainer>
-            <Link href="/">
-                <Image
-                    src="/images/agile_logo.svg"
-                    alt="Agile Southwest Logo"
-                    width={164}
-                    height={80}
-                />
 
-            </Link>
             <CopyrightContainer>
                 <StyleBody color={white}>&copy;2025 Agile Southwest. All rights reserved.</StyleBody>
             </CopyrightContainer>

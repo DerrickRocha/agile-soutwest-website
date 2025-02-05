@@ -9,8 +9,6 @@ import Card from "@/app/components/card";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import PageWrapper from "@/app/components/pageWrapper";
-import Image from "next/image";
-import LargeImage from "@/app/components/largeImage";
 
 function Home() {
     return (
@@ -166,6 +164,16 @@ const AboutSectionDiv = styled.div`
     }
 `;
 
+const AboutSectionImageDiv = styled.div`
+    width: 100%;
+    background-image: url('/images/home_about_section_image.webp');
+    background-repeat: no-repeat; 
+    border-radius: 8px;
+    @media (max-width: ${theme.breakpoints.tablet}) {
+        height: 400px;
+    }
+`;
+
 const AboutSectionTextDiv = styled.div`
     width: 100%;
     padding: 0 ${theme.padding.cardBodyPadding};
@@ -174,9 +182,7 @@ const AboutSectionTextDiv = styled.div`
 function HomeAboutSection() {
     return (
         <AboutSectionDiv>
-            <LargeImage imageUrl={"/images/home_about_section_image.webp"} altText={"Home about section image"} width={818} height={745}>
-
-            </LargeImage>
+            <AboutSectionImageDiv/>
             <AboutSectionTextDiv>
                 <VerticalSpacingSmall/>
                 <H1 $textAlign={'center'}>
@@ -215,18 +221,17 @@ const HomeImagesDiv = styled.div`
     gap: ${theme.padding.cardSpacing};
 `;
 
-const RoundedImage = styled(Image)`
+const RoundedImage = styled.img`
     border-radius: ${theme.dimensions.borderRadius};  
     width: 100%; 
-    height: auto;
 `;
 
 function HomeImagesSection() {
     return (
         <HomeImagesDiv>
-            <RoundedImage src="/images/neural_network1.webp" alt="Neural network image" width={1000} height={562} priority={true}/>
-            <RoundedImage src="/images/website_development.webp" alt="Web development image" width={371} height={271} priority={true}/>
-            <RoundedImage src="/images/soldering.webp" alt="Web development image" width={360} height={240} priority={true}/>
+            <RoundedImage src="/images/neural_network1.webp" alt="Neural network image"/>
+            <RoundedImage src="/images/web_development.webp" alt="Web development image"/>
+            <RoundedImage src="/images/soldering.webp" alt="Web development image"/>
 
         </HomeImagesDiv>
     );

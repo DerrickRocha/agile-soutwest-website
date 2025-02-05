@@ -4,12 +4,9 @@ import {theme} from "@/app/constants/theme";
 
 interface LargeImageProps {
     imageUrl: string;
-    altText: string;
-    width?: number;
-    height?: number;
 }
 
-const ImageWrapper = styled.div`
+const ImageDiv = styled.img`
     width: 100%;
     display: block;
     margin-left: auto;
@@ -23,17 +20,8 @@ const ImageWrapper = styled.div`
     }
 `;
 
-export default function LargeImage({ imageUrl, altText, width = 1200, height = 800 }: LargeImageProps) {
+export default function LargeImage(props: LargeImageProps) {
     return (
-        <ImageWrapper>
-            <Image
-                src={imageUrl}
-                alt={altText}
-                width={width}
-                height={height}
-                layout="responsive"
-                priority
-            />
-        </ImageWrapper>
+        <ImageDiv src={props.imageUrl}/>
     );
 }
