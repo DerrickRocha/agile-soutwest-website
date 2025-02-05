@@ -2,7 +2,6 @@ import { Body, H2 } from "@/app/components/text";
 import { theme } from "@/app/constants/theme";
 import styled from "styled-components";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
-import Image from "next/image";
 
 interface CardProps {
     image: string;
