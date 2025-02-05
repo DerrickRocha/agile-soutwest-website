@@ -110,6 +110,10 @@ const HomeServicesCardsDiv = styled.div`
         display: grid; 
         grid-template-columns: repeat(2, 1fr); 
     }
+    @media (max-width: ${theme.breakpoints.mobile}) {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
 `;
 
 function HomeServicesSection() {
@@ -129,22 +133,22 @@ function HomeServicesSection() {
             <VerticalSpacingSmall/>
             <HomeServicesCardsDiv>
                 <Card
-                    image='/images/optimized_website_development.webp'
+                    image='/images/website_development.webp'
                     heading='Web Development'
                     body='Custom website development to help small businesses grow with responsive SEO-friendly designs that drive results.'>
                 </Card>
                 <Card
-                    image='/images/optimized_native_android_and_ios_development.webp'
+                    image='/images/native_android_and_ios_development.webp'
                     heading='Native Android & iOS Development'
                     body='Native Android & iOS app development for small businesses, delivering fast, user-friendly apps that enhance customer engagement and drive growth.'>
                 </Card>
                 <Card
-                    image='/images/optimized_mobile_device_screen_repair.webp'
+                    image='/images/mobile_device_screen_repair.webp'
                     heading='Mobile Device Screen Replacement'
                     body='Professional mobile device screen replacement services, offfering fast, reliable repairs for cracked or damaged screens on all major brands.'>
                 </Card>
                 <Card
-                    image='/images/optimized_pc_mac_and_electronics_repair.webp'
+                    image='/images/pc_mac_and_electronics_repair.webp'
                     heading='PC, Mac, and Electronics Repair'
                     body='Expert PC, Mac, and electronics repair services, providing fast, reliable solutions for hardware, software, and device issues on all major brands.'>
                 </Card>
@@ -230,8 +234,8 @@ function HomeImagesSection() {
     return (
         <HomeImagesDiv>
             <RoundedImage src="/images/optimized_neural_network1.webp" alt="Neural network image"/>
-            <RoundedImage src="/images/optimized_web_development.webp" alt="Web development image"/>
-            <RoundedImage src="/images/optimized_soldering.webp" alt="Web development image"/>
+            <RoundedImage src="/images/web_development.webp" alt="Web development image"/>
+            <RoundedImage src="/images/soldering.webp" alt="Web development image"/>
 
         </HomeImagesDiv>
     );
