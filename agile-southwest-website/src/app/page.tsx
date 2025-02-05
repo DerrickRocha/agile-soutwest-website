@@ -9,6 +9,24 @@ import Card from "@/app/components/card";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import PageWrapper from "@/app/components/pageWrapper";
+import Image from "next/image";
+import LargeImage from "@/app/components/largeImage";
+
+function Home() {
+    return (
+        <Layout>
+            <HomeHeroSection/>
+            <PageWrapper>
+                <HomeServicesSection/>
+                <VerticalSpacingLarge/>
+                <HomeAboutSection/>
+                <VerticalSpacingLarge/>
+                <HomeImagesSection/>
+            </PageWrapper>
+
+        </Layout>
+    );
+}
 
 const HeroContainer = styled.div`
     display: grid;
@@ -54,7 +72,7 @@ const OverlayTextContainer = styled.div`
 const FixedImage = styled.div`
     grid-column: 1 / -1;
     grid-row: 1; 
-    background-image: url('/images/agile-methodology-machine-learning.png');
+    background-image: url('/images/agile-methodology-machine-learning.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,27 +80,11 @@ const FixedImage = styled.div`
     height: 100%;
 `;
 
-
-function Home() {
-    return (
-        <Layout>
-            <HomeHeroSection/>
-            <PageWrapper>
-                <HomeServicesSection/>
-                <VerticalSpacingLarge/>
-                <HomeAboutSection/>
-                <VerticalSpacingLarge/>
-                <HomeImagesSection/>
-            </PageWrapper>
-
-        </Layout>
-    );
-}
-
 function HomeHeroSection() {
     return (
         <HeroContainer>
-            <FixedImage/>
+            <FixedImage>
+            </FixedImage>
             <Overlay/>
             <OverlayTextContainer>
                 <Hero1Text fontFamily={theme.fonts.hero} color="white">
@@ -129,22 +131,22 @@ function HomeServicesSection() {
             <VerticalSpacingSmall/>
             <HomeServicesCardsDiv>
                 <Card
-                    image='/images/website_development.png'
+                    image='/images/website_development.webp'
                     heading='Web Development'
                     body='Custom website development to help small businesses grow with responsive SEO-friendly designs that drive results.'>
                 </Card>
                 <Card
-                    image='/images/native_android_and_ios_development.png'
+                    image='/images/native_android_and_ios_development.webp'
                     heading='Native Android & iOS Development'
                     body='Native Android & iOS app development for small businesses, delivering fast, user-friendly apps that enhance customer engagement and drive growth.'>
                 </Card>
                 <Card
-                    image='/images/mobile_device_screen_repair.png'
+                    image='/images/mobile_device_screen_repair.webp'
                     heading='Mobile Device Screen Replacement'
                     body='Professional mobile device screen replacement services, offfering fast, reliable repairs for cracked or damaged screens on all major brands.'>
                 </Card>
                 <Card
-                    image='/images/pc_mac_and_electronics_repair.png'
+                    image='/images/pc_mac_and_electronics_repair.webp'
                     heading='PC, Mac, and Electronics Repair'
                     body='Expert PC, Mac, and electronics repair services, providing fast, reliable solutions for hardware, software, and device issues on all major brands.'>
                 </Card>
@@ -164,16 +166,6 @@ const AboutSectionDiv = styled.div`
     }
 `;
 
-const AboutSectionImageDiv = styled.div`
-    width: 100%;
-    background-image: url('/images/home_about_section_image.png');
-    background-repeat: no-repeat; 
-    border-radius: 8px;
-    @media (max-width: ${theme.breakpoints.tablet}) {
-        height: 400px;
-    }
-`;
-
 const AboutSectionTextDiv = styled.div`
     width: 100%;
     padding: 0 ${theme.padding.cardBodyPadding};
@@ -182,7 +174,9 @@ const AboutSectionTextDiv = styled.div`
 function HomeAboutSection() {
     return (
         <AboutSectionDiv>
-            <AboutSectionImageDiv/>
+            <LargeImage imageUrl={"/images/home_about_section_image.webp"} altText={"Home about section image"} width={818} height={745}>
+
+            </LargeImage>
             <AboutSectionTextDiv>
                 <VerticalSpacingSmall/>
                 <H1 $textAlign={'center'}>
@@ -221,17 +215,18 @@ const HomeImagesDiv = styled.div`
     gap: ${theme.padding.cardSpacing};
 `;
 
-const RoundedImage = styled.img`
+const RoundedImage = styled(Image)`
     border-radius: ${theme.dimensions.borderRadius};  
     width: 100%; 
+    height: auto;
 `;
 
 function HomeImagesSection() {
     return (
         <HomeImagesDiv>
-            <RoundedImage src="/images/neural_network1.jpeg" alt="Neural network image"/>
-            <RoundedImage src="/images/web_development.jpg" alt="Web development image"/>
-            <RoundedImage src="/images/soldering.jpg" alt="Web development image"/>
+            <RoundedImage src="/images/neural_network1.webp" alt="Neural network image" width={1000} height={562} priority={true}/>
+            <RoundedImage src="/images/website_development.webp" alt="Web development image" width={371} height={271} priority={true}/>
+            <RoundedImage src="/images/soldering.webp" alt="Web development image" width={360} height={240} priority={true}/>
 
         </HomeImagesDiv>
     );

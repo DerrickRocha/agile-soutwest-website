@@ -1,15 +1,20 @@
+import Image from "next/image";
 import styled from "styled-components";
 import {theme} from "@/app/constants/theme";
 
 interface LargeImageProps {
-    imageUrl: string
+    imageUrl: string;
+    altText: string;
+    width?: number;
+    height?: number;
 }
 
-const ImageDiv = styled.img`
+const ImageWrapper = styled.div`
     width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+
     @media (min-width: ${theme.breakpoints.standardDesktop}) {
         width: 85%;
     }
@@ -18,8 +23,17 @@ const ImageDiv = styled.img`
     }
 `;
 
-export default function LargeImage(props: LargeImageProps) {
+export default function LargeImage({ imageUrl, altText, width = 1200, height = 800 }: LargeImageProps) {
     return (
-        <ImageDiv src={props.imageUrl}/>
-    )
+        <ImageWrapper>
+            <Image
+                src={imageUrl}
+                alt={altText}
+                width={width}
+                height={height}
+                layout="responsive"
+                priority
+            />
+        </ImageWrapper>
+    );
 }
