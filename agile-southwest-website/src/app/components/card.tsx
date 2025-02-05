@@ -38,38 +38,33 @@ const BodyStyling = styled.div`
     padding: 0 ${theme.padding.verticalDivSpacingSmall};
 `;
 
-const StyledImage = styled(Image)`
+const RoundedImage = styled.img`
     width: 100%;
-    height: auto;
     max-height: 250px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    @media (max-width:${theme.breakpoints.mobile} ) {
-        max-height: 200px
-    }
 `;
 
-export default function Card({ image, body, heading }: CardProps) {
+export default function Card({image, body, heading}: CardProps) {
     return (
         <CardDiv>
-            <StyledImage
-                src={image}
-                alt="Card image"
-                width={500} // Adjust to match your needs
-                height={250} // Adjust to match your needs
-                layout="responsive" // Ensures responsiveness
-            />
-            <VerticalSpacingSmall />
+            <RoundedImage
+                src={image} alt='Card image'>
+
+            </RoundedImage>
+            <VerticalSpacingSmall/>
             <HeaderStyling>
-                <H2 color={theme.colors.primary} $textAlign={"center"}>
+                <H2 color={theme.colors.primary} $textAlign={'center'}>
                     {heading}
                 </H2>
             </HeaderStyling>
-            <VerticalSpacingSmall />
+            <VerticalSpacingSmall/>
             <BodyStyling>
-                <Body color={theme.colors.gray}>{body}</Body>
+                <Body color={theme.colors.gray}>
+                    {body}
+                </Body>
             </BodyStyling>
-            <VerticalSpacingSmall />
+            <VerticalSpacingSmall/>
         </CardDiv>
     );
 }
