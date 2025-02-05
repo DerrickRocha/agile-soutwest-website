@@ -24,7 +24,7 @@ const AboutPage = () => {
                 <VerticalSpacingLarge/>
                 <InformationSection title={aboutSubHeading} content={content}/>
                 <VerticalSpacingLarge/>
-                <LargeImage imageUrl="/images/southeast_santafe_drone.png"></LargeImage>
+                <LargeImage imageUrl="/images/southeast_santafe_drone.webp"></LargeImage>
             </PageWrapper>
         </Layout>
     );
