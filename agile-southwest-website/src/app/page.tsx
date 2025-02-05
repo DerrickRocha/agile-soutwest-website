@@ -10,6 +10,7 @@ import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import PageWrapper from "@/app/components/pageWrapper";
 import Image from "next/image";
+import LargeImage from "@/app/components/largeImage";
 
 function Home() {
     return (
@@ -82,7 +83,8 @@ const FixedImage = styled.div`
 function HomeHeroSection() {
     return (
         <HeroContainer>
-            <FixedImage/>
+            <FixedImage>
+            </FixedImage>
             <Overlay/>
             <OverlayTextContainer>
                 <Hero1Text fontFamily={theme.fonts.hero} color="white">
@@ -164,16 +166,6 @@ const AboutSectionDiv = styled.div`
     }
 `;
 
-const AboutSectionImageDiv = styled.div`
-    width: 100%;
-    background-image: url('/images/home_about_section_image.webp');
-    background-repeat: no-repeat; 
-    border-radius: 8px;
-    @media (max-width: ${theme.breakpoints.tablet}) {
-        height: 400px;
-    }
-`;
-
 const AboutSectionTextDiv = styled.div`
     width: 100%;
     padding: 0 ${theme.padding.cardBodyPadding};
@@ -182,7 +174,9 @@ const AboutSectionTextDiv = styled.div`
 function HomeAboutSection() {
     return (
         <AboutSectionDiv>
-            <AboutSectionImageDiv/>
+            <LargeImage imageUrl={"/images/home_about_section_image.webp"} altText={"Home about section image"} width={818} height={745}>
+
+            </LargeImage>
             <AboutSectionTextDiv>
                 <VerticalSpacingSmall/>
                 <H1 $textAlign={'center'}>
