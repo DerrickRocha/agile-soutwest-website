@@ -5,7 +5,6 @@ import React from "react";
 import {theme} from "@/app/constants/theme";
 import Hero1Text, {Body, H1, Hero2Text} from "@/app/components/text";
 import styled from "styled-components";
-import Card from "@/app/components/card";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import PageWrapper from "@/app/components/pageWrapper";
@@ -132,26 +131,7 @@ function HomeServicesSection() {
 
             <VerticalSpacingSmall/>
             <HomeServicesCardsDiv>
-                <Card
-                    image='/images1/website_development.webp'
-                    heading='Web Development'
-                    body='Custom website development to help small businesses grow with responsive SEO-friendly designs that drive results.'>
-                </Card>
-                <Card
-                    image='/images/1native_android_and_ios_development.webp'
-                    heading='Native Android & iOS Development'
-                    body='Native Android & iOS app development for small businesses, delivering fast, user-friendly apps that enhance customer engagement and drive growth.'>
-                </Card>
-                <Card
-                    image='/images/1mobile_device_screen_repair.webp'
-                    heading='Mobile Device Screen Replacement'
-                    body='Professional mobile device screen replacement services, offfering fast, reliable repairs for cracked or damaged screens on all major brands.'>
-                </Card>
-                <Card
-                    image='/images/1pc_mac_and_electronics_repair.webp'
-                    heading='PC, Mac, and Electronics Repair'
-                    body='Expert PC, Mac, and electronics repair services, providing fast, reliable solutions for hardware, software, and device issues on all major brands.'>
-                </Card>
+
             </HomeServicesCardsDiv>
         </HomeServicesDiv>
     );
