@@ -1,7 +1,6 @@
 "use client";
 
 import Layout from "@/app/components/layout";
-import PageWrapper from "@/app/components/pageWrapper";
 import {H1} from "@/app/components/text";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import InformationSection from "@/app/components/InformationSection";
