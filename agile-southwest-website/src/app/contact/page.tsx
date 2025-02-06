@@ -7,6 +7,7 @@ import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import styled from "styled-components";
 import {theme} from "@/app/constants/theme";
 import {useState} from "react";
+import Layout from "@/app/components/layout";
 
 const subHeading = "Reach Out to Agile Southwest for Custom Solutions and Support"
 const content = [
@@ -135,7 +136,7 @@ const ContactPage = () => {
         }
     }
     return (
-        <>
+        <Layout>
             <H1 $textAlign={'center'}>
                 Contact Agile Southwest
             </H1>
@@ -212,7 +213,7 @@ const ContactPage = () => {
                 </Form>
             }
 
-        </>
+        </Layout>
     );
 }
 
