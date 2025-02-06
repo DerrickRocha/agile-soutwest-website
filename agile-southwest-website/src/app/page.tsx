@@ -10,7 +10,7 @@ import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import Image from "next/image";
 import LargeImage from "@/app/components/largeImage";
 
-function Home() {
+export default function Home() {
     return (
         <>
             <HomeHeroSection/>
@@ -19,7 +19,6 @@ function Home() {
             <HomeAboutSection/>
             <VerticalSpacingLarge/>
             <HomeImagesSection/>
-
         </>
     );
 }
@@ -227,5 +226,3 @@ function HomeImagesSection() {
         </HomeImagesDiv>
     );
 }
-
-export default Home;

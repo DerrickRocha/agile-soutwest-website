@@ -1,7 +1,5 @@
 "use client"
 import React, {ReactNode} from "react";
-import Header from "@/app/components/header";
-import Footer from "@/app/components/footer";
 import styled from "styled-components";
 import {theme} from "@/app/constants/theme";
 
@@ -24,12 +22,9 @@ const MainContent = styled.main`
 const Layout: React.FC<LayoutProps> = ({children}) => {
     return (
         <LayoutContainer>
-            <Header/>
             <MainContent>
                 {children}
             </MainContent>
-
-            <Footer/>
         </LayoutContainer>
     );
 };
