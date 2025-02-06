@@ -1,6 +1,5 @@
 "use client";
 
-import Layout from "@/app/components/layout";
 import {H1, H2} from "@/app/components/text";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import InformationSection from "@/app/components/InformationSection";
@@ -136,7 +135,7 @@ const ContactPage = () => {
         }
     }
     return (
-        <Layout>
+        <>
             <H1 $textAlign={'center'}>
                 Contact Agile Southwest
             </H1>
@@ -213,7 +212,7 @@ const ContactPage = () => {
                 </Form>
             }
 
-        </Layout>
+        </>
     );
 }
 

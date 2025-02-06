@@ -1,6 +1,5 @@
 "use client";
 
-import Layout from "@/app/components/layout";
 import {H1} from "@/app/components/text";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import InformationSection from "@/app/components/InformationSection";
@@ -15,7 +14,7 @@ const content = [
 
 const AboutPage = () => {
     return (
-        <Layout>
+        <>
             <H1 $textAlign={'center'}>
                 About Agile Southwest
             </H1>
@@ -23,7 +22,7 @@ const AboutPage = () => {
             <InformationSection title={aboutSubHeading} content={content}/>
             <VerticalSpacingLarge/>
             <LargeImage imageUrl="/images/southeast_santafe_drone.webp" altText={"Southeast Santa Fe drone picture"} width={1461} height={822}></LargeImage>
-        </Layout>
+        </>
     );
 };
 

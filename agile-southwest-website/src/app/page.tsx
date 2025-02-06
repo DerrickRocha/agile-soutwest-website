@@ -1,6 +1,5 @@
 "use client";
 
-import Layout from "@/app/components/layout";
 import React from "react";
 import {theme} from "@/app/constants/theme";
 import Hero1Text, {Body, H1, Hero2Text} from "@/app/components/text";
@@ -13,7 +12,7 @@ import LargeImage from "@/app/components/largeImage";
 
 function Home() {
     return (
-        <Layout>
+        <>
             <HomeHeroSection/>
             <HomeServicesSection/>
             <VerticalSpacingLarge/>
@@ -21,7 +20,7 @@ function Home() {
             <VerticalSpacingLarge/>
             <HomeImagesSection/>
 
-        </Layout>
+        </>
     );
 }
 
