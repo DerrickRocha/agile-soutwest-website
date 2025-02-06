@@ -12,7 +12,6 @@ import PageWrapper from "@/app/components/pageWrapper";
 function Home() {
     return (
         <Layout>
-            <HomeHeroSection/>
             <PageWrapper>
                 <HomeServicesSection/>
                 <VerticalSpacingLarge/>
