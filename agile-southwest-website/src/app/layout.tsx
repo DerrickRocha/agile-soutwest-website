@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Layout from "@/app/components/layout";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -13,7 +14,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+      <Layout>
+          {children}
+      </Layout>
+
       </body>
     </html>
   );

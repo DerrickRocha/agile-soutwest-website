@@ -4,7 +4,6 @@ import {H1} from "@/app/components/text";
 import InformationSection from "@/app/components/InformationSection";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import LargeImage from "@/app/components/largeImage";
-import Layout from "@/app/components/layout";
 
 const webSectionContent = [
     "At Agile Southwest, we specialize in custom website development designed to meet" +
@@ -43,7 +42,7 @@ const hardWareServicesContent = [
 const ServicesPage = () => {
 
     return (
-        <Layout>
+        <>
             <H1 $textAlign={'center'}>
                 Custom Web Development, Mobile App Development, and Repair Services
             </H1>
@@ -58,7 +57,7 @@ const ServicesPage = () => {
             <VerticalSpacingLarge/>
             <LargeImage imageUrl="/images/ragle_diamond.webp" altText={"Ragle Park drone picture"} width={1920} height={1080}></LargeImage>
 
-        </Layout>
+        </>
     );
 };
 

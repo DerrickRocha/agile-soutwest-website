@@ -9,11 +9,10 @@ import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import Image from "next/image";
 import LargeImage from "@/app/components/largeImage";
-import Layout from "@/app/components/layout";
 
 function Home() {
     return (
-        <Layout>
+        <>
             <HomeHeroSection/>
             <HomeServicesSection/>
             <VerticalSpacingLarge/>
@@ -21,7 +20,7 @@ function Home() {
             <VerticalSpacingLarge/>
             <HomeImagesSection/>
 
-        </Layout>
+        </>
     );
 }
 
