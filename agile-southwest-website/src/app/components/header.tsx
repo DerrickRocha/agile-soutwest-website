@@ -3,7 +3,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import styled from "styled-components";
-import Image from 'next/image';
 import { theme } from "@/app/constants/theme";
 import { usePathname } from 'next/navigation'; // Import usePathname hook
 
@@ -108,12 +107,6 @@ export default function Header() {
                 </NavList>
 
                 <MenuIcon onClick={toggleMenu}>
-                    <Image
-                        src="/images/menu_24dp_E8EAED.svg"
-                        alt="Hamburger Menu"
-                        width={32}
-                        height={32}
-                    />
                 </MenuIcon>
                 <MobileNavList $isOpen={isMenuOpen}> {}
                     <NavItem $isActive={pathname === "/"}>
