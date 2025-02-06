@@ -2,44 +2,40 @@
 
 import React from "react";
 import {theme} from "@/app/constants/theme";
-import Hero1Text, { Hero2Text} from "@/app/components/text";
+import Hero1Text, {Hero2Text} from "@/app/components/text";
 import styled from "styled-components";
-import Layout from "@/app/components/layout";
 
 function Home() {
     return (
-        <Layout>
-            <HomeHeroSection/>
 
-
-        </Layout>
+        <HomeHeroSection/>
     );
 }
 
 const HeroContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr; 
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     width: 100%;
     height: 920px;
 `;
 
 const Overlay = styled.div`
-    grid-column: 1 / -1; 
-    grid-row: 1; 
+    grid-column: 1 / -1;
+    grid-row: 1;
     background-color: rgba(0, 51, 102, 0.8);
     width: 100%;
-    height: 100%; 
+    height: 100%;
 `;
 
 const OverlayTextContainer = styled.div`
-    grid-column: 1 / -1; 
-    grid-row: 1; 
+    grid-column: 1 / -1;
+    grid-row: 1;
     padding: 0 ${theme.padding.gutter};
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: start; 
+    justify-content: center;
+    align-items: start;
     text-align: left;
 
     @media (max-width: ${theme.breakpoints.smallDesktop}) {
@@ -59,7 +55,7 @@ const OverlayTextContainer = styled.div`
 
 const FixedImage = styled.div`
     grid-column: 1 / -1;
-    grid-row: 1; 
+    grid-row: 1;
     background-image: url('/images/agile-methodology-machine-learning.webp');
     background-size: cover;
     background-position: center;
