@@ -89,12 +89,7 @@ export default function Header() {
             <Nav>
                 <LogoContainer>
                     <Link href="/">
-                        <Image
-                            src="/images/optimized_agile_logo.webp"
-                            alt="Agile Southwest Logo"
-                            width={164}
-                            height={80}
-                        />
+
                     </Link>
                 </LogoContainer>
                 <NavList>
