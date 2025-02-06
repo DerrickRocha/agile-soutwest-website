@@ -5,7 +5,6 @@ import {H1} from "@/app/components/text";
 import PageWrapper from "@/app/components/pageWrapper";
 import InformationSection from "@/app/components/InformationSection";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
-import LargeImage from "@/app/components/largeImage";
 
 const webSectionContent = [
     "At Agile Southwest, we specialize in custom website development designed to meet" +
@@ -58,7 +57,7 @@ const ServicesPage = () => {
                 <VerticalSpacingLarge/>
                 <InformationSection title="Comprehensive PC, Mac, and Electronics Repair Solutions" content={hardWareServicesContent}/>
                 <VerticalSpacingLarge/>
-                <LargeImage imageUrl="/images/1optimized_ragle_diamond.webp"></LargeImage>
+
             </PageWrapper>
 
         </Layout>

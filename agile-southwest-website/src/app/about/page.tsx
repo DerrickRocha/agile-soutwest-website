@@ -5,7 +5,6 @@ import PageWrapper from "@/app/components/pageWrapper";
 import {H1} from "@/app/components/text";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import InformationSection from "@/app/components/InformationSection";
-import LargeImage from "@/app/components/largeImage";
 
 const aboutSubHeading = "Meet Agile Southwest: Innovators in Web Development and Electronics Repair"
 const content = [
@@ -24,7 +23,6 @@ const AboutPage = () => {
                 <VerticalSpacingLarge/>
                 <InformationSection title={aboutSubHeading} content={content}/>
                 <VerticalSpacingLarge/>
-                <LargeImage imageUrl="/images/2southeast_santafe_drone.webp"></LargeImage>
             </PageWrapper>
         </Layout>
     );
