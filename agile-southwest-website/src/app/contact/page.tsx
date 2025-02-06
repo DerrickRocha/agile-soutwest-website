@@ -1,7 +1,6 @@
 "use client";
 
 import Layout from "@/app/components/layout";
-import PageWrapper from "@/app/components/pageWrapper";
 import {H1, H2} from "@/app/components/text";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import InformationSection from "@/app/components/InformationSection";
@@ -138,83 +137,81 @@ const ContactPage = () => {
     }
     return (
         <Layout>
-            <PageWrapper>
-                <H1 $textAlign={'center'}>
-                    Contact Agile Southwest
-                </H1>
-                <VerticalSpacingLarge/>
-                <InformationSection title={subHeading} content={content}/>
-                <VerticalSpacingLarge/>
-                <H2 $textAlign={"center"}>
-                    505-310-0331
-                </H2>
-                <VerticalSpacingSmall/>
-                <H2 $textAlign={"center"}>
-                    drocha616@gmail.com
-                </H2>
-                {
-                    statusState &&
-                    <>
-                        <VerticalSpacingLarge/>
-                        <H2 $textAlign={"center"}
-                            color={statusState.type === "success" ? undefined : "#EE4B2B"}
-                        >
-                            {statusState.message}
-                        </H2>
-                    </>
-                }
-                {
-                    statusState?.type !== "failure" && statusState?.type !== "success" &&
-                    <Form onSubmit={handleSubmit}>
-                        <Label>
-                            Name <span style={{color: theme.colors.alertRed}}>*</span>
-                            <Input type="text"
-                                   name="name"
-                                   value={formData.name}
-                                   onChange={handleChange}
-                                   required={true}
-                            />
-                        </Label>
-                        <VerticalSpacingSmall/>
-                        <Label>
-                            Phone <span style={{color: theme.colors.alertRed}}>*</span>
-                            <Input
-                                type="text"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                required={true}
-                            />
-                        </Label>
-                        <VerticalSpacingSmall/>
-                        <Label>
-                            Email
-                            <Input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-                        </Label>
-                        <VerticalSpacingSmall/>
-                        <Label>
-                            Message <span style={{color: theme.colors.alertRed}}>*</span>
-                            <TextArea
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required={true}
-                            />
-                        </Label>
-                        <VerticalSpacingSmall/>
-                        <SubmitButton
-                            type="submit"
-                            value={isSubmitting ? "Submitting..." : "Submit"}
-                            disabled={isSubmitting}
+            <H1 $textAlign={'center'}>
+                Contact Agile Southwest
+            </H1>
+            <VerticalSpacingLarge/>
+            <InformationSection title={subHeading} content={content}/>
+            <VerticalSpacingLarge/>
+            <H2 $textAlign={"center"}>
+                505-310-0331
+            </H2>
+            <VerticalSpacingSmall/>
+            <H2 $textAlign={"center"}>
+                drocha616@gmail.com
+            </H2>
+            {
+                statusState &&
+                <>
+                    <VerticalSpacingLarge/>
+                    <H2 $textAlign={"center"}
+                        color={statusState.type === "success" ? undefined : "#EE4B2B"}
+                    >
+                        {statusState.message}
+                    </H2>
+                </>
+            }
+            {
+                statusState?.type !== "failure" && statusState?.type !== "success" &&
+                <Form onSubmit={handleSubmit}>
+                    <Label>
+                        Name <span style={{color: theme.colors.alertRed}}>*</span>
+                        <Input type="text"
+                               name="name"
+                               value={formData.name}
+                               onChange={handleChange}
+                               required={true}
                         />
-                    </Form>
-                }
-            </PageWrapper>
+                    </Label>
+                    <VerticalSpacingSmall/>
+                    <Label>
+                        Phone <span style={{color: theme.colors.alertRed}}>*</span>
+                        <Input
+                            type="text"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required={true}
+                        />
+                    </Label>
+                    <VerticalSpacingSmall/>
+                    <Label>
+                        Email
+                        <Input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+                    </Label>
+                    <VerticalSpacingSmall/>
+                    <Label>
+                        Message <span style={{color: theme.colors.alertRed}}>*</span>
+                        <TextArea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required={true}
+                        />
+                    </Label>
+                    <VerticalSpacingSmall/>
+                    <SubmitButton
+                        type="submit"
+                        value={isSubmitting ? "Submitting..." : "Submit"}
+                        disabled={isSubmitting}
+                    />
+                </Form>
+            }
 
         </Layout>
     );

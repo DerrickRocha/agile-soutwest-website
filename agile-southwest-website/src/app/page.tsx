@@ -7,18 +7,15 @@ import  {Body, H1} from "@/app/components/text";
 import styled from "styled-components";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
-import PageWrapper from "@/app/components/pageWrapper";
 
 function Home() {
     return (
         <Layout>
-            <PageWrapper>
-                <HomeServicesSection/>
-                <VerticalSpacingLarge/>
-                <HomeAboutSection/>
-                <VerticalSpacingLarge/>
-                <HomeImagesSection/>
-            </PageWrapper>
+            <HomeServicesSection/>
+            <VerticalSpacingLarge/>
+            <HomeAboutSection/>
+            <VerticalSpacingLarge/>
+            <HomeImagesSection/>
 
         </Layout>
     );
