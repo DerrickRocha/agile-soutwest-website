@@ -8,7 +8,6 @@ import styled from "styled-components";
 import Card from "@/app/components/card";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
-import PageWrapper from "@/app/components/pageWrapper";
 import Image from "next/image";
 import LargeImage from "@/app/components/largeImage";
 
@@ -16,13 +15,11 @@ function Home() {
     return (
         <Layout>
             <HomeHeroSection/>
-            <PageWrapper>
-                <HomeServicesSection/>
-                <VerticalSpacingLarge/>
-                <HomeAboutSection/>
-                <VerticalSpacingLarge/>
-                <HomeImagesSection/>
-            </PageWrapper>
+            <HomeServicesSection/>
+            <VerticalSpacingLarge/>
+            <HomeAboutSection/>
+            <VerticalSpacingLarge/>
+            <HomeImagesSection/>
 
         </Layout>
     );
