@@ -51,19 +51,7 @@ const OverlayTextContainer = styled.div`
     align-items: start; 
     text-align: left;
 
-    @media (max-width: ${theme.breakpoints.smallDesktop}) {
-        width: 100%;
-    }
-    @media (max-width: ${theme.breakpoints.tablet}) {
-        width: 100%;
-        text-align: center;
-        align-items: center;
-    }
-    @media (max-width: ${theme.breakpoints.mobile}) {
-        width: 100%;
-        text-align: center;
-        align-items: center;
-    }
+   
 `;
 
 const FixedImage = styled.div`
@@ -105,14 +93,7 @@ const HomeServicesCardsDiv = styled.div`
     align-items: center; 
     gap: ${theme.padding.cardSpacing};
     overflow-x: auto;
-    @media (max-width: ${theme.breakpoints.smallDesktop}) {
-        display: grid; 
-        grid-template-columns: repeat(2, 1fr); 
-    }
-    @media (max-width: ${theme.breakpoints.mobile}) {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
+   
 `;
 
 function HomeServicesSection() {
@@ -141,11 +122,7 @@ const AboutSectionDiv = styled.div`
     gap: ${theme.padding.verticalDivSpacingSmall};
     min-height: 600px;
     
-    @media (max-width: ${theme.breakpoints.tablet}) {
-        flex-direction: column;
-        gap: ${theme.padding.verticalDivSpacingSmall};
-        text-align: center; 
-    }
+   
 `;
 
 const AboutSectionImageDiv = styled.div`
@@ -153,9 +130,7 @@ const AboutSectionImageDiv = styled.div`
     //background-image: url('/images/optimized_home_about_section_image.webp');
     background-repeat: no-repeat; 
     border-radius: 8px;
-    @media (max-width: ${theme.breakpoints.tablet}) {
-        height: 400px;
-    }
+   
 `;
 
 const AboutSectionTextDiv = styled.div`
