@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Layout from "@/app/components/layout";
+import "@/app/globals.css";
 import React from "react";
+import Header from "@/app/components/header";
 
 export const metadata: Metadata = {
   title: "Home",
-  description: "Agile Southwest repair page",
+  description: "Agile Southwest Home page",
 };
 
 export default function RootLayout({
@@ -15,13 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <header>
-        Header
-      </header>
-      <Layout>
+      <Header/>
           {children}
-      </Layout>
-      <footer>
+      <footer className="site-footer">
           Footer
       </footer>
       </body>
