@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import React from "react";
 import Header from "@/app/components/header";
+import Footer from "@/app/components/footer";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -18,9 +19,7 @@ export default function RootLayout({
       <body>
       <Header/>
           {children}
-      <footer className="site-footer">
-          Footer
-      </footer>
+      <Footer/>
       </body>
     </html>
   );

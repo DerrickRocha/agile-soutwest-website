@@ -1,0 +1,34 @@
+.mainFooter {
+    display: flex;
+    background-color: var(--primary);
+    padding: 0 70px;
+
+    @media (max-width: 768px) {
+        padding: 0 16px
+    }
+    height: 80px;
+    justify-content: space-between;
+}
+
+.copyrightContainer {
+    display: grid;
+    align-items: end;
+    padding-bottom: 8px;
+}
+
+.contactContainer {
+    display: grid;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.footerText {
+    font-size: var(14px);
+    font-family: Verdana, Helvetica, sans-serif;
+    color: var(--white);
+    text-align: center;
+    @media (max-width: 540px) {
+        font-size: 12px;
+    }
+}
