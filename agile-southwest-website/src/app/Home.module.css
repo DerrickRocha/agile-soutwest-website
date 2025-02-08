@@ -60,3 +60,36 @@
     font-family: Arial, Helvetica, sans-serif;
     color: var(--white);
 }
+
+.homeServicesSection {
+    width: 100%;
+}
+
+.homeServiceCards {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: var(--cardSpacing);
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.cardDiv {
+    width: 100%;
+    height: auto;
+    background-color: var(--white);
+    border-radius: 8px;
+}
+
+.cardImage {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.cardBodyDiv {
+    padding: var(--cardBodyPadding);
+}

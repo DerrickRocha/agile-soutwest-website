@@ -17,8 +17,24 @@
     --breakpointSmallDesktop: 1024px;
     --breakpointStandardDesktop: 1440px;
     --breakpointLargeDesktop: 1920px;
+
     --linkTextSize: 18px;
     --largeHeroSubHeadingTextSize: 48px;
+    --heading1: 28px;
+    --heading2: 22px;
+    --heading3: 18px;
+    --smallBody: 12px;
+    --bodyRegular: 14px;
+    --bodyLarge: 18px;
+
+    --cardSpacing: 15px;
+    --cardHeight: 550px;
+    --cardBodyPadding: 16px;
+    --tabletCardHeight: 450px;
+    --verticalDivSpacingSmall: 22px;
+    --smallDesktopCardHeight: 470px;
+    --standardDesktopCardHeight: 485px;
+
     --linkFont: Verdana, Helvetica, sans-serif;
 }
 
@@ -31,6 +47,22 @@ body {
     font-family: Roboto, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-size: var(--heading1);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+h2 {
+    font-size: var(--heading2);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: var(--primary);
+    font-weight: bold;
 }
 
 * {

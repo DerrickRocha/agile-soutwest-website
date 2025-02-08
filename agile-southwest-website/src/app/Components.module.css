@@ -2,6 +2,10 @@
     height: 40px;
 }
 
+.verticalSpacingSmall {
+    height: 16px;
+}
+
 .layoutContainer {
     background-color: var(--light);
     width: 100%;
