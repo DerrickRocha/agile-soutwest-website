@@ -27,13 +27,15 @@
     --bodyRegular: 14px;
     --bodyLarge: 18px;
 
-    --cardSpacing: 15px;
+    --cardSpacing: 16px;
     --cardHeight: 550px;
     --cardBodyPadding: 16px;
     --tabletCardHeight: 450px;
     --verticalDivSpacingSmall: 22px;
+    --verticalDivSpacingLarge: 40px;
     --smallDesktopCardHeight: 470px;
     --standardDesktopCardHeight: 485px;
+    --borderRadius: 8px;
 
     --linkFont: Verdana, Helvetica, sans-serif;
 }

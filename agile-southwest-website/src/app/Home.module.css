@@ -93,3 +93,38 @@
 .cardBodyDiv {
     padding: var(--cardBodyPadding);
 }
+
+.aboutSectionDiv {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--verticalDivSpacingLarge);
+    align-items: center;
+    @media (max-width: 540px) {
+        flex-direction: column;
+        gap: var(--verticalDivSpacingSmall);
+    }
+}
+
+.aboutImage {
+    width: 100%;
+    height: auto;
+}
+
+.aboutTextDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.homeBottomImagesDiv {
+    display: flex;
+    gap: var(--cardSpacing);
+}
+
+.homeBottomImage {
+    border-radius:var(--borderRadius);
+    width: 100%;
+    height: auto;
+}
