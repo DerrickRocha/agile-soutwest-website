@@ -51,7 +51,7 @@ function ServicesSection() {
                 for Android & iOS, and expert PC,Mac, and electronics repair. We provide tailored solutions to help your
                 business grow, improve customer engagement, and ensure reliable device performance solutions.
             </text>
-            <VerticalSpacingLarge/>
+            <VerticalSpacingSmall/>
             <ServiceCards/>
         </>
     )
