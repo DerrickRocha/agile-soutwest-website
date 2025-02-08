@@ -3,16 +3,18 @@ import React from "react";
 import Layout from "@/app/components/layout";
 
 export default function Home() {
-    return <>
-        <HeroSection/>
-        <VerticalSpacingLarge/>
-        <Layout>
-            <ServicesSection/>
-            <HomeAboutSection/>
+    return (
+        <>
+            <HeroSection/>
             <VerticalSpacingLarge/>
-            <HomeImagesSection/>
-        </Layout>
-    </>
+            <Layout>
+                <ServicesSection/>
+                <HomeAboutSection/>
+                <VerticalSpacingLarge/>
+                <HomeImagesSection/>
+            </Layout>
+        </>
+    )
 }
 
 function HeroSection() {

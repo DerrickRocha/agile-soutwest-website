@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image';
 import styling from "@/app/Header.module.css";
+import MobileMenu from "@/app/components/mobileMenu";
 
 export default function Header() {
     return (
@@ -30,28 +31,7 @@ export default function Header() {
                         <Link href="/contact">Contact</Link>
                     </li>
                 </ul>
-                <div className= {styling.menuIcon}>
-                    <Image
-                        src="/images/menu_24dp_E8EAED.svg"
-                        alt="Hamburger Menu"
-                        width={32}
-                        height={32}
-                    />
-                </div>
-                <ul className={styling.mobileNavList}>
-                    <li className={styling.navListItem}>
-                        <Link href="/">Home</Link>
-                    </li>
-                    <li className={styling.navListItem}>
-                        <Link href="/services">Services</Link>
-                    </li>
-                    <li className={styling.navListItem}>
-                        <Link href="/about">About</Link>
-                    </li>
-                    <li className={styling.navListItem}>
-                        <Link href="/contact">Contact</Link>
-                    </li>
-                </ul>
+                <MobileMenu/>
             </nav>
         </header>
     )
