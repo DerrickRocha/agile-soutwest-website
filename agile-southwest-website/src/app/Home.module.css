@@ -77,8 +77,8 @@
 .cardImage {
     width: 100%;
     height: auto;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
 }
 
 .cardBodyDiv {
