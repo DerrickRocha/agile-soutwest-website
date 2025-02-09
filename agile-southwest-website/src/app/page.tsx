@@ -1,4 +1,4 @@
-import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
+import VerticalSpacingLarge from "@/app/components/verticalSpacingLarge";
 import Layout from "@/app/components/layout";
 import styling from "@/app/Home.module.css"
 import {theme} from "@/app/constants/theme";

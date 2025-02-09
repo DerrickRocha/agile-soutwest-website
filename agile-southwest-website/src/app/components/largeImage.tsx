@@ -1,6 +1,5 @@
 import Image from "next/image";
-import styled from "styled-components";
-import {theme} from "@/app/constants/theme";
+import styling from "@/app/Components.module.css";
 
 interface LargeImageProps {
     imageUrl: string;
@@ -9,23 +8,9 @@ interface LargeImageProps {
     height?: number;
 }
 
-const ImageWrapper = styled.div`
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    @media (min-width: ${theme.breakpoints.standardDesktop}) {
-        width: 85%;
-    }
-    @media (min-width: ${theme.breakpoints.largeDesktop}) {
-        width: 100%;
-    }
-`;
-
 export default function LargeImage({ imageUrl, altText, width = 1200, height = 800 }: LargeImageProps) {
     return (
-        <ImageWrapper>
+        <div className={styling.imageWrapper}>
             <Image
                 src={imageUrl}
                 alt={altText}
@@ -34,6 +19,6 @@ export default function LargeImage({ imageUrl, altText, width = 1200, height = 8
                 layout="responsive"
                 priority
             />
-        </ImageWrapper>
+        </div>
     );
 }

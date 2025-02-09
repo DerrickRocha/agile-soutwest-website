@@ -1,8 +1,5 @@
-"use client";
-
-import {H1} from "@/app/components/text";
-import InformationSection from "@/app/components/InformationSection";
-import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
+import InformationSection from "@/app/components/informationSection";
+import VerticalSpacingLarge from "@/app/components/verticalSpacingLarge";
 import LargeImage from "@/app/components/largeImage";
 import Layout from "@/app/components/layout";
 
@@ -44,9 +41,9 @@ const ServicesPage = () => {
 
     return (
         <Layout>
-            <H1 $textAlign={'center'}>
+            <h1>
                 Custom Web Development, Mobile App Development, and Repair Services
-            </H1>
+            </h1>
             <VerticalSpacingLarge/>
             <InformationSection
                 title='Custom Website Development: Tailored Solutions for Small Business Success'

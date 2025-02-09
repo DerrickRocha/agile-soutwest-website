@@ -1,9 +1,7 @@
-"use client";
-
-import {H1} from "@/app/components/text";
-import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
-import InformationSection from "@/app/components/InformationSection";
+import VerticalSpacingLarge from "@/app/components/verticalSpacingLarge";
+import InformationSection from "@/app/components/informationSection";
 import LargeImage from "@/app/components/largeImage";
+import Layout from "@/app/components/layout";
 
 const aboutSubHeading = "Meet Agile Southwest: Innovators in Web Development and Electronics Repair"
 const content = [
@@ -14,15 +12,15 @@ const content = [
 
 const AboutPage = () => {
     return (
-        <>
-            <H1 $textAlign={'center'}>
+        <Layout>
+            <h1>
                 About Agile Southwest
-            </H1>
+            </h1>
             <VerticalSpacingLarge/>
             <InformationSection title={aboutSubHeading} content={content}/>
             <VerticalSpacingLarge/>
             <LargeImage imageUrl="/images/southeast_santafe_drone.webp" altText={"Southeast Santa Fe drone picture"} width={1461} height={822}></LargeImage>
-        </>
+        </Layout>
     );
 };
 

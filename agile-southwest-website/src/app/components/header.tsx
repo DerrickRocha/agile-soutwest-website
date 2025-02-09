@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image';
 import styling from "@/app/Header.module.css";
-import MobileMenu from "@/app/components/mobileMenu";
+import MobileMenu from "@/app/components/client/mobileMenu";
 
 export default function Header() {
     return (
