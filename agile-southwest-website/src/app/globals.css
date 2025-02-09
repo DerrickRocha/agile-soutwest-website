@@ -1,42 +1,86 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+    --primary: #003366;
+    --secondary: #BB8903;
+    --accent: #803300;
+    --white: #FFFFFF;
+    --light: #F5F5F5;
+    --dark: #007186;
+    --gray: #707070;
+    --alertRed: #EE4B2B;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --mobileGutter: 16px;
+    --gutter: 70px;
+    --gutterLarge: 320px;
+    --headerHeight: 80px;
+    --breakpointMobile: 540px;
+    --breakpointTablet: 768px;
+    --breakpointSmallDesktop: 1024px;
+    --breakpointStandardDesktop: 1440px;
+    --breakpointLargeDesktop: 1920px;
+
+    --linkTextSize: 18px;
+    --heroHeadingTextSize: 76px;
+    --largeHeroSubHeadingTextSize: 48px;
+    --heading1: 28px;
+    --heading2: 22px;
+    --heading3: 18px;
+    --smallBody: 12px;
+    --bodyRegular: 14px;
+    --bodyLarge: 18px;
+
+    --cardSpacing: 16px;
+    --cardHeight: 550px;
+    --cardBodyPadding: 16px;
+    --tabletCardHeight: 450px;
+    --verticalDivSpacingSmall: 22px;
+    --verticalDivSpacingLarge: 40px;
+    --smallDesktopCardHeight: 470px;
+    --standardDesktopCardHeight: 485px;
+    --borderRadius: 8px;
+    --padding: 8px;
+    --gap: 20px;
+    --navMarginBottom: 16px;
+    --mobileNavGap: 10px;
+    --mobileNavPadding: 10px;
+    --heroHeight: 920px;
+
+    --linkFont: Verdana, Helvetica, sans-serif;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+    max-width: 100vw;
+    overflow-x: hidden;
+    color: var(--gray);
+    background-color: var(--light);
+    font-family: Roboto, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1 {
+    font-size: var(--heading1);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+h2 {
+    font-size: var(--heading2);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: var(--primary);
+    font-weight: bold;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+    color: inherit;
+    text-decoration: none;
 }

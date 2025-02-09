@@ -1,0 +1,121 @@
+.heroContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: var(--heroHeight);
+}
+
+.overlay {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+}
+
+.overlayTextContainer {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    padding: 0 var(--gutter);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.fixedImage {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    background-image: url('/images/agile-methodology-machine-learning.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.heroHeading {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+    font-size: var(--heroHeadingTextSize);
+}
+.heroSubHeading {
+    font-size: var(--largeHeroSubHeadingTextSize);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+}
+
+.homeServicesSection {
+    width: 100%;
+}
+
+.homeServiceCards {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: var(--cardSpacing);
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.cardDiv {
+    width: 100%;
+    height: auto;
+    background-color: var(--white);
+    border-radius: 8px;
+}
+
+.cardImage {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+}
+
+.cardBodyDiv {
+    padding: var(--cardBodyPadding);
+}
+
+.aboutSectionDiv {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--verticalDivSpacingLarge);
+    align-items: center;
+    @media (max-width: 540px) {
+        flex-direction: column;
+        gap: var(--verticalDivSpacingSmall);
+    }
+}
+
+.aboutImage {
+    width: 100%;
+    height: auto;
+}
+
+.aboutTextDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.homeBottomImagesDiv {
+    display: flex;
+    gap: var(--cardSpacing);
+}
+
+.homeBottomImage {
+    border-radius:var(--borderRadius);
+    width: 100%;
+    height: auto;
+}

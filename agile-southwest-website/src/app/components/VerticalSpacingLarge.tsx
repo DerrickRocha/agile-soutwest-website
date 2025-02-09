@@ -1,11 +1,7 @@
-import styled from "styled-components";
-import {theme} from "@/app/constants/theme";
+import styling from "@/app/Components.module.css"
 
-const VerticalSpacingLargeDiv = styled.div`
-    height: ${theme.padding.verticalDivSpacingLarge};
-`;
 export default function VerticalSpacingLarge() {
     return (
-        <VerticalSpacingLargeDiv/>
+        <div className={styling.verticalSpacingLarge}/>
     );
 }

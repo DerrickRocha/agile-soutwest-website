@@ -1,7 +1,5 @@
 "use client";
 
-import Layout from "@/app/components/layout";
-import PageWrapper from "@/app/components/pageWrapper";
 import {H1} from "@/app/components/text";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import InformationSection from "@/app/components/InformationSection";
@@ -16,17 +14,15 @@ const content = [
 
 const AboutPage = () => {
     return (
-        <Layout>
-            <PageWrapper>
-                <H1 $textAlign={'center'}>
-                    About Agile Southwest
-                </H1>
-                <VerticalSpacingLarge/>
-                <InformationSection title={aboutSubHeading} content={content}/>
-                <VerticalSpacingLarge/>
-                <LargeImage imageUrl="/images/southeast_santafe_drone.webp" altText={"Southeast Santa Fe drone picture"} width={1461} height={822}></LargeImage>
-            </PageWrapper>
-        </Layout>
+        <>
+            <H1 $textAlign={'center'}>
+                About Agile Southwest
+            </H1>
+            <VerticalSpacingLarge/>
+            <InformationSection title={aboutSubHeading} content={content}/>
+            <VerticalSpacingLarge/>
+            <LargeImage imageUrl="/images/southeast_santafe_drone.webp" altText={"Southeast Santa Fe drone picture"} width={1461} height={822}></LargeImage>
+        </>
     );
 };
 
