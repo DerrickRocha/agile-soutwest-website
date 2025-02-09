@@ -55,7 +55,7 @@ export default function ContactForm() {
                 } else {
                     setStatusState({
                         type: "failure",
-                        message: result.error || "There was an error sending your message."
+                        message: "There was an error sending your message. Please try again."
                     });
                 }
             }
@@ -73,14 +73,14 @@ export default function ContactForm() {
                 <>
                     <VerticalSpacingLarge/>
                     <h2
-                        color={statusState.type === "success" ? undefined : "#EE4B2B"}
+                        style={{color: statusState.type === "success" ? undefined : "#EE4B2B"}}
                     >
                         {statusState.message}
                     </h2>
                 </>
             }
             {
-                statusState?.type !== "failure" && statusState?.type !== "success" &&
+                statusState?.type !== "success" &&
                 <form
                     className={styling.form}
                     onSubmit={handleSubmit}
@@ -140,7 +140,6 @@ export default function ContactForm() {
                     />
                 </form>
             }
-
         </Layout>
     )
 }
