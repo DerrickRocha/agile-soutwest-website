@@ -9,7 +9,7 @@
 .overlay {
     grid-column: 1 / -1;
     grid-row: 1;
-    background-color: var(--primary);
+    background-color: rgba(0, 51, 102, 0.8);
     width: 100%;
     height: 100%;
 }
@@ -21,24 +21,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    text-align: left;
-
-    @media (max-width: 768px) {
-        text-align: center;
-        align-items: center;
-    }
+    align-items: center;
 }
 
 .fixedImage {
     grid-column: 1 / -1;
     grid-row: 1;
-    background-image: url('/images/agile-methodology-machine-learning.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     width: 100%;
-    height: 100%;
 }
 
 .heroHeading {

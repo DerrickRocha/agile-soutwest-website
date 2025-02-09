@@ -24,7 +24,7 @@ export default function Home() {
 function HeroSection() {
     return (
         <div className={styling.heroContainer}>
-            <div className={styling.fixedImage}/>
+            <Image className={styling.fixedImage} src={"/images/agile-methodology-machine-learning.webp"} alt={"Machine Learning Background"} width={800} height={920}/>
             <div className={styling.overlay}/>
             <div className={styling.overlayTextContainer}>
                 <h1 className={styling.heroHeading}>
