@@ -1,11 +1,10 @@
 "use client";
 
-import Layout from "@/app/components/layout";
 import {H1} from "@/app/components/text";
-import PageWrapper from "@/app/components/pageWrapper";
 import InformationSection from "@/app/components/InformationSection";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
 import LargeImage from "@/app/components/largeImage";
+import Layout from "@/app/components/layout";
 
 const webSectionContent = [
     "At Agile Southwest, we specialize in custom website development designed to meet" +
@@ -45,21 +44,19 @@ const ServicesPage = () => {
 
     return (
         <Layout>
-            <PageWrapper>
-                <H1 $textAlign={'center'}>
-                    Custom Web Development, Mobile App Development, and Repair Services
-                </H1>
-                <VerticalSpacingLarge/>
-                <InformationSection
-                    title='Custom Website Development: Tailored Solutions for Small Business Success'
-                    content={webSectionContent}/>
-                <VerticalSpacingLarge/>
-                <InformationSection title="Native Mobile App Development Services for Android & iOS Platforms" content={mobileServicesContent}/>
-                <VerticalSpacingLarge/>
-                <InformationSection title="Comprehensive PC, Mac, and Electronics Repair Solutions" content={hardWareServicesContent}/>
-                <VerticalSpacingLarge/>
-                <LargeImage imageUrl="/images/ragle_diamond.webp" altText={"Ragle Park drone picture"} width={1920} height={1080}></LargeImage>
-            </PageWrapper>
+            <H1 $textAlign={'center'}>
+                Custom Web Development, Mobile App Development, and Repair Services
+            </H1>
+            <VerticalSpacingLarge/>
+            <InformationSection
+                title='Custom Website Development: Tailored Solutions for Small Business Success'
+                content={webSectionContent}/>
+            <VerticalSpacingLarge/>
+            <InformationSection title="Native Mobile App Development Services for Android & iOS Platforms" content={mobileServicesContent}/>
+            <VerticalSpacingLarge/>
+            <InformationSection title="Comprehensive PC, Mac, and Electronics Repair Solutions" content={hardWareServicesContent}/>
+            <VerticalSpacingLarge/>
+            <LargeImage imageUrl="/images/ragle_diamond.webp" altText={"Ragle Park drone picture"} width={1920} height={1080}></LargeImage>
 
         </Layout>
     );

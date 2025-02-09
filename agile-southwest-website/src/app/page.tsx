@@ -1,190 +1,102 @@
-"use client";
-
-import Layout from "@/app/components/layout";
-import React from "react";
-import {theme} from "@/app/constants/theme";
-import Hero1Text, {Body, H1, Hero2Text} from "@/app/components/text";
-import styled from "styled-components";
-import Card from "@/app/components/card";
-import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import VerticalSpacingLarge from "@/app/components/VerticalSpacingLarge";
-import PageWrapper from "@/app/components/pageWrapper";
+import Layout from "@/app/components/layout";
+import styling from "@/app/Home.module.css"
+import {theme} from "@/app/constants/theme";
+import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
+import Card from "@/app/components/card";
 import Image from "next/image";
-import LargeImage from "@/app/components/largeImage";
 
-function Home() {
+export default function Home() {
     return (
-        <Layout>
-            <HomeHeroSection/>
-            <PageWrapper>
-                <HomeServicesSection/>
+        <>
+            <HeroSection/>
+            <Layout>
+                <ServicesSection/>
                 <VerticalSpacingLarge/>
                 <HomeAboutSection/>
                 <VerticalSpacingLarge/>
                 <HomeImagesSection/>
-            </PageWrapper>
-
-        </Layout>
-    );
+            </Layout>
+        </>
+    )
 }
 
-const HeroContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr; 
-    width: 100%;
-    height: 920px;
-`;
-
-const Overlay = styled.div`
-    grid-column: 1 / -1; 
-    grid-row: 1; 
-    background-color: rgba(0, 51, 102, 0.8);
-    width: 100%;
-    height: 100%; 
-`;
-
-const OverlayTextContainer = styled.div`
-    grid-column: 1 / -1; 
-    grid-row: 1; 
-    padding: 0 ${theme.padding.gutter};
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: start; 
-    text-align: left;
-
-    @media (max-width: ${theme.breakpoints.smallDesktop}) {
-        width: 100%;
-    }
-    @media (max-width: ${theme.breakpoints.tablet}) {
-        width: 100%;
-        text-align: center;
-        align-items: center;
-    }
-    @media (max-width: ${theme.breakpoints.mobile}) {
-        width: 100%;
-        text-align: center;
-        align-items: center;
-    }
-`;
-
-const FixedImage = styled.div`
-    grid-column: 1 / -1;
-    grid-row: 1; 
-    background-image: url('/images/agile-methodology-machine-learning.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-`;
-
-function HomeHeroSection() {
+function HeroSection() {
     return (
-        <HeroContainer>
-            <FixedImage>
-            </FixedImage>
-            <Overlay/>
-            <OverlayTextContainer>
-                <Hero1Text fontFamily={theme.fonts.hero} color="white">
+        <div className={styling.heroContainer}>
+            <div className={styling.fixedImage}/>
+            <div className={styling.overlay}/>
+            <div className={styling.overlayTextContainer}>
+                <h1 className={styling.heroHeading}>
                     Your Vision, <span style={{color: theme.colors.secondary}}>Our Expertise</span>
-                </Hero1Text>
-                <Hero2Text fontFamily={theme.fonts.hero} color="white">
+                </h1>
+                <h1 className={styling.heroSubHeading}>
                     Flexible Web and Mobile Solutions for Growing Businesses
-                </Hero2Text>
-            </OverlayTextContainer>
-        </HeroContainer>
-    );
+                </h1>
+            </div>
+        </div>
+    )
+
 }
 
-const HomeServicesDiv = styled.div`
-    width: 100%;
-`;
-
-const HomeServicesCardsDiv = styled.div`
-    width: 100%;
-    display: flex; 
-    align-items: center; 
-    gap: ${theme.padding.cardSpacing};
-    overflow-x: auto;
-    @media (max-width: ${theme.breakpoints.smallDesktop}) {
-        display: grid; 
-        grid-template-columns: repeat(2, 1fr); 
-    }
-`;
-
-function HomeServicesSection() {
+function ServicesSection() {
     return (
-        <HomeServicesDiv>
-            <H1 color={theme.colors.primary} $textAlign={'center'}>
+        <>
+            <h1>
                 Comprehensive Services to Drive Your Success
-            </H1>
-
+            </h1>
             <VerticalSpacingSmall/>
-            <Body color={theme.colors.gray}>
+            <text>
                 Explore our professional services, including custom website development, native mobile app development
                 for Android & iOS, and expert PC,Mac, and electronics repair. We provide tailored solutions to help your
                 business grow, improve customer engagement, and ensure reliable device performance solutions.
-            </Body>
-
+            </text>
             <VerticalSpacingSmall/>
-            <HomeServicesCardsDiv>
-                <Card
-                    image='/images/website_development.webp'
-                    heading='Web Development'
-                    body='Custom website development to help small businesses grow with responsive SEO-friendly designs that drive results.'>
-                </Card>
-                <Card
-                    image='/images/native_android_and_ios_development.webp'
-                    heading='Native Android & iOS Development'
-                    body='Native Android & iOS app development for small businesses, delivering fast, user-friendly apps that enhance customer engagement and drive growth.'>
-                </Card>
-                <Card
-                    image='/images/mobile_device_screen_repair.webp'
-                    heading='Mobile Device Screen Replacement'
-                    body='Professional mobile device screen replacement services, offfering fast, reliable repairs for cracked or damaged screens on all major brands.'>
-                </Card>
-                <Card
-                    image='/images/pc_mac_and_electronics_repair.webp'
-                    heading='PC, Mac, and Electronics Repair'
-                    body='Expert PC, Mac, and electronics repair services, providing fast, reliable solutions for hardware, software, and device issues on all major brands.'>
-                </Card>
-            </HomeServicesCardsDiv>
-        </HomeServicesDiv>
+            <ServiceCards/>
+        </>
+    )
+}
+
+function ServiceCards() {
+    return (
+        <div className={styling.homeServiceCards}>
+            <Card
+                image='/images/website_development.webp'
+                heading='Web Development'
+                body='Custom website development to help small businesses grow with responsive SEO-friendly designs that drive results.'>
+            </Card>
+            <Card
+                image='/images/native_android_and_ios_development.webp'
+                heading='Native Android & iOS Development'
+                body='Native Android & iOS app development for small businesses, delivering fast, user-friendly apps that enhance customer engagement and drive growth.'>
+            </Card>
+            <Card
+                image='/images/mobile_device_screen_repair.webp'
+                heading='Mobile Device Screen Replacement'
+                body='Professional mobile device screen replacement services, offfering fast, reliable repairs for cracked or damaged screens on all major brands.'>
+            </Card>
+            <Card
+                image='/images/pc_mac_and_electronics_repair.webp'
+                heading='PC, Mac, and Electronics Repair'
+                body='Expert PC, Mac, and electronics repair services, providing fast, reliable solutions for hardware, software, and device issues on all major brands.'>
+            </Card>
+        </div>
     );
 }
-const AboutSectionDiv = styled.div`
-    display: flex;
-    gap: ${theme.padding.verticalDivSpacingSmall};
-    min-height: 600px;
-    
-    @media (max-width: ${theme.breakpoints.tablet}) {
-        flex-direction: column;
-        gap: ${theme.padding.verticalDivSpacingSmall};
-        text-align: center; 
-    }
-`;
-
-const AboutSectionTextDiv = styled.div`
-    width: 100%;
-    padding: 0 ${theme.padding.cardBodyPadding};
-`;
 
 function HomeAboutSection() {
     return (
-        <AboutSectionDiv>
-            <LargeImage imageUrl={"/images/home_about_section_image.webp"} altText={"Home about section image"} width={818} height={745}>
-
-            </LargeImage>
-            <AboutSectionTextDiv>
+        <div className={styling.aboutSectionDiv}>
+            <Image className={styling.aboutImage}
+                   width={350}
+                   height={350}
+                   src={"/images/home_about_section_image.webp"}
+                   alt={"About Section Image"}
+            />
+            <div className={styling.aboutTextDiv}>
+                <h1>Delivering Custom Solutions For Small Business Growth</h1>
                 <VerticalSpacingSmall/>
-                <H1 $textAlign={'center'}>
-                    Delivering Custom Solutions For Small Business Growth
-                </H1>
-
-                <VerticalSpacingSmall/>
-                <Body>
+                <text>
                     At Agile Southwest, we are dedicated to helping small businesses thrive in
                     the digital age by providing customized web development, native mobile app
                     development, and electronics repair services. With years of experience serving
@@ -203,33 +115,37 @@ function HomeAboutSection() {
                     with a deep understanding of our clients&#39; needs to help them achieve lasting success.
                     Let us be your partner in driving digital transformation, optimizing your business
                     operations, and growing your brand.
-                </Body>
-                <VerticalSpacingSmall/>
-            </AboutSectionTextDiv>
-        </AboutSectionDiv>
+                </text>
+            </div>
+        </div>
+
     );
 }
-
-const HomeImagesDiv = styled.div`
-    display: flex; 
-    gap: ${theme.padding.cardSpacing};
-`;
-
-const RoundedImage = styled(Image)`
-    border-radius: ${theme.dimensions.borderRadius};  
-    width: 100%; 
-    height: auto;
-`;
 
 function HomeImagesSection() {
     return (
-        <HomeImagesDiv>
-            <RoundedImage src="/images/neural_network1.webp" alt="Neural network image" width={1000} height={562} priority={true}/>
-            <RoundedImage src="/images/website_development.webp" alt="Web development image" width={371} height={271} priority={true}/>
-            <RoundedImage src="/images/soldering.webp" alt="Web development image" width={360} height={240} priority={true}/>
-
-        </HomeImagesDiv>
+        <div className={styling.homeBottomImagesDiv}>
+            <Image
+                className={styling.homeBottomImage}
+                src="/images/neural_network.webp"
+                alt="Neural network image"
+                width={490}
+                height={450}
+            />
+            <Image
+                className={styling.homeBottomImage}
+                src="/images/website_development.webp"
+                alt="Web development image"
+                width={450}
+                height={490}
+            />
+            <Image
+                className={styling.homeBottomImage}
+                src="/images/soldering.webp"
+                alt="Web development image"
+                width={450}
+                height={490}
+            />
+        </div>
     );
 }
-
-export default Home;
