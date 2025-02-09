@@ -23,8 +23,8 @@
 .navList {
     list-style: none;
     display: flex;
-    gap: 20px;
-    margin-bottom: 16px;
+    gap: var(--gap);
+    margin-bottom: var(--navMarginBottom);
     @media (max-width: 768px) {
         display: none;
     }
@@ -41,12 +41,12 @@
 .mobileNavList {
     list-style: none;
     flex-direction: column;
-    gap: 10px;
-    background-color: #003366;
+    gap: var(--mobileNavGap);
+    background-color:var(--primary);
     position: absolute;
-    top: 80px;
+    top: var(--headerHeight);
     right: 0;
-    padding: 10px;
+    padding: var(--mobileNavPadding);
     display: flex;
 
     @media (min-width: 769px) {

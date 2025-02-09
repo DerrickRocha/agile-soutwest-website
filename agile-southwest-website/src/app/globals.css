@@ -19,6 +19,7 @@
     --breakpointLargeDesktop: 1920px;
 
     --linkTextSize: 18px;
+    --heroHeadingTextSize: 76px;
     --largeHeroSubHeadingTextSize: 48px;
     --heading1: 28px;
     --heading2: 22px;
@@ -36,6 +37,12 @@
     --smallDesktopCardHeight: 470px;
     --standardDesktopCardHeight: 485px;
     --borderRadius: 8px;
+    --padding: 8px;
+    --gap: 20px;
+    --navMarginBottom: 16px;
+    --mobileNavGap: 10px;
+    --mobileNavPadding: 10px;
+    --heroHeight: 920px;
 
     --linkFont: Verdana, Helvetica, sans-serif;
 }
