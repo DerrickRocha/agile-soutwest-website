@@ -14,6 +14,7 @@ export default function Header() {
                             alt="Agile Southwest Logo"
                             width={164}
                             height={80}
+                            priority={true}
                         />
                     </Link>
                 </div>
