@@ -17,7 +17,7 @@ export default function LargeImage({ imageUrl, altText, width = 1200, height = 8
                 width={width}
                 height={height}
                 layout="responsive"
-                priority
+                priority={true}
             />
         </div>
     );

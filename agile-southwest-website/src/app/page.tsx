@@ -24,7 +24,14 @@ export default function Home() {
 function HeroSection() {
     return (
         <div className={styling.heroContainer}>
-            <Image className={styling.fixedImage} src={"/images/agile-methodology-machine-learning.webp"} alt={"Machine Learning Background"} width={800} height={920}/>
+            <Image
+                className={styling.fixedImage}
+                src={"/images/agile-methodology-machine-learning.webp"}
+                alt={"Machine Learning Background"}
+                width={800}
+                height={920}
+                priority={true}
+            />
             <div className={styling.overlay}/>
             <div className={styling.overlayTextContainer}>
                 <h1 className={styling.heroHeading}>
@@ -92,6 +99,7 @@ function HomeAboutSection() {
                    height={350}
                    src={"/images/home_about_section_image.webp"}
                    alt={"About Section Image"}
+                   priority={true}
             />
             <div className={styling.aboutTextDiv}>
                 <h1>Delivering Custom Solutions For Small Business Growth</h1>
@@ -131,6 +139,7 @@ function HomeImagesSection() {
                 alt="Neural network image"
                 width={490}
                 height={450}
+                priority={true}
             />
             <Image
                 className={styling.homeBottomImage}
@@ -138,6 +147,7 @@ function HomeImagesSection() {
                 alt="Web development image"
                 width={450}
                 height={490}
+                priority={true}
             />
             <Image
                 className={styling.homeBottomImage}
@@ -145,6 +155,7 @@ function HomeImagesSection() {
                 alt="Web development image"
                 width={450}
                 height={490}
+                priority={true}
             />
         </div>
     );

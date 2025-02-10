@@ -16,6 +16,7 @@ export default function Card({image, body, heading}: CardProps) {
                    alt={heading}
                    width={371}
                    height={271}
+                   priority={true}
             />
             <div className={styling.cardBodyDiv}>
                 <h2>
