@@ -1,40 +1,34 @@
 import React from "react";
-import styled from "styled-components";
-import {Body, H2} from "@/app/components/text";
 import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
+import styling from "@/app/Components.module.css";
 
 interface InformationSectionProps {
     title: string
     content: string[]
 }
 
-const Container = styled.div`
-    width: 100%;
-    height: auto;
-`;
-
 const InformationSection: React.FC<InformationSectionProps> = ({title, content}: {
     title: string,
     content: string[]
 }) => {
     return (
-        <Container>
-            <H2 $textAlign={'center'}>
+        <div className={styling.informationSectionContainer}>
+            <h2>
                 {title}
-            </H2>
+            </h2>
             <VerticalSpacingSmall/>
-            <Body>
+            <text>
                 {Array.isArray(content)
                     ? content.map((paragraph, index) =>
                         <p key={index}>
                             {paragraph}
-                            {index !== content.length - 1 && <><br /><br /></>}
+                            {index !== content.length - 1 && <><br/><br/></>}
                         </p>)
                     : <p>{content}</p>
                 }
-            </Body>
+            </text>
             <VerticalSpacingSmall/>
-        </Container>
+        </div>
     )
 }
 
