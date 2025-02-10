@@ -27,7 +27,6 @@ const InformationSection: React.FC<InformationSectionProps> = ({title, content}:
                     : <p>{content}</p>
                 }
             </text>
-            <VerticalSpacingSmall/>
         </div>
     )
 }
