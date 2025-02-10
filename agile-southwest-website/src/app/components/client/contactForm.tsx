@@ -41,7 +41,7 @@ export default function ContactForm() {
                     body: JSON.stringify(formData)
                 }
             )
-            const result = await response.json()
+            await response.json()
             if (response.ok) {
                 setStatusState({type: "success", message: "Thank you! We will reach out to you shortly."});
             } else {
