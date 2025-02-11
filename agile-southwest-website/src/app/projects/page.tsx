@@ -10,11 +10,11 @@ export default function ProjectsPage() {
             <VerticalSpacingLarge/>
             <div className={styling.projectsSection}>
                 <ProjectCard title={"Web Development"} projectName={"Smiling Moon Farm"}
-                             image={"/images/smiling_moon_farm.png"}/>
+                             image={"/images/smiling_moon_farm.webp"}/>
                 <ProjectCard title={"Android Development"} projectName={"myQ"}
-                             image={"/images/myq_screen_shot.png"}/>
+                             image={"/images/myq_screen_shot.webp"}/>
                 <ProjectCard title={"Android Development"} projectName={"Fetch Delivery"}
-                             image={"/images/fetch_screen_shot.jpg"}/>
+                             image={"/images/fetch_screen_shot.webp"}/>
             </div>
         </Layout>
     )
