@@ -26,7 +26,10 @@ export default function Header() {
                         <Link href="/services">Services</Link>
                     </li>
                     <li className={styling.navListItem}>
-                       <Link href="/about">About</Link>
+                        <Link href="/projects">Projects</Link>
+                    </li>
+                    <li className={styling.navListItem}>
+                        <Link href="/about">About</Link>
                     </li>
                     <li className={styling.navListItem}>
                         <Link href="/contact">Contact</Link>

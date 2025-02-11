@@ -30,6 +30,9 @@ export default function MobileMenu() {
                         <Link href="/services">Services</Link>
                     </li>
                     <li className={styling.navListItem}>
+                        <Link href="/projects">Projects</Link>
+                    </li>
+                    <li className={styling.navListItem}>
                         <Link href="/about">About</Link>
                     </li>
                     <li className={styling.navListItem}>
