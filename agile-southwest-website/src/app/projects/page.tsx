@@ -1,7 +1,7 @@
 import Layout from "@/app/components/layout";
 import VerticalSpacingLarge from "@/app/components/verticalSpacingLarge";
 import styling from "@/app/Projects.module.css"
-import Image from "next/image";
+import ProjectCard from "@/app/components/projectCard";
 
 export default function ProjectsPage() {
     return (
@@ -9,27 +9,12 @@ export default function ProjectsPage() {
             <h1>Projects</h1>
             <VerticalSpacingLarge/>
             <div className={styling.projectsSection}>
-                <Image className={styling.projectImage}
-                       src={"/images/smiling_moon_farm.png"}
-                       alt={"Smiling Moon Farm"}
-                       width={500}
-                       height={500}
-                       priority={true}
-                />
-                <Image className={styling.projectImage}
-                       src={"/images/myq_screen_shot.png"}
-                       alt={"Smiling Moon Farm"}
-                       width={500}
-                       height={500}
-                       priority={true}
-                />
-                <Image className={styling.projectImage}
-                       src={"/images/fetch_screen_shot.jpg"}
-                       alt={"Smiling Moon Farm"}
-                       width={500}
-                       height={500}
-                       priority={true}
-                />
+                <ProjectCard title={"Web Development"} projectName={"Smiling Moon Farm"}
+                             image={"/images/smiling_moon_farm.png"}/>
+                <ProjectCard title={"Android Development"} projectName={"myQ"}
+                             image={"/images/myq_screen_shot.png"}/>
+                <ProjectCard title={"Android Development"} projectName={"Fetch Delivery"}
+                             image={"/images/fetch_screen_shot.jpg"}/>
             </div>
         </Layout>
     )
