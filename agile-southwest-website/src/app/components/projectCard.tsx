@@ -1,15 +1,12 @@
 import styling from "@/app/Projects.module.css";
 import Image from "next/image";
+import {OverlaySection} from "@/app/components/client/projectOverlaySection";
 
 interface ProjectCardProps {
     title: string,
     projectName: string,
+    projectDescription: string[],
     image: string
-}
-
-interface OverlaySectionProps {
-    title: string,
-    projectName: string
 }
 
 export default function ProjectCard(props: ProjectCardProps) {
@@ -23,19 +20,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                 height={500}
                 priority={true}
             />
-            <OverlaySection projectName={props.projectName} title={props.title}/>
+            <OverlaySection projectName={props.projectName} title={props.title} projectDescription={props.projectDescription}/>
         </div>
     )
-}
-
-function OverlaySection(props: OverlaySectionProps) {
-    return (
-        <div className={styling.projectCardOverlaySection}>
-            <div className={styling.projectCardOverlay}/>
-            <div className={styling.projectCardTextSection}>
-                <h2 className={styling.projectCardText}>{props.title}</h2>
-                <h1 className={styling.projectCardText}>{props.projectName}</h1>
-            </div>
-        </div>
-    );
 }
