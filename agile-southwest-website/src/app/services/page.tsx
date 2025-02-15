@@ -4,23 +4,10 @@ import LargeImage from "@/app/components/largeImage";
 import Layout from "@/app/components/layout";
 
 const webSectionContent = [
-    "At Agile Southwest, we specialize in custom website development designed to meet" +
-    " the unique needs of small businesses. Our expert team creates responsive, SEO-friendly" +
-    " websites that not only look stunning but are also optimized for speed, user experience," +
-    " and search engine rankings. Whether you’re launching a new business or looking to upgrade" +
-    " an existing site, we offer end-to-end website solutions, from web design to development," +
-    " ensuring your site aligns with your business goals.",
-    "We understand that every business is different, which is why our approach to website development" +
-    " is entirely custom. We work closely with you to develop a website that reflects your brand, engages" +
-    " your audience, and drives measurable results. Our websites are designed with mobile-first principles," +
-    " ensuring a seamless experience across all devices—whether your customers are browsing from a desktop" +
-    ", tablet, or smartphone.",
-    "Our custom-built websites are not only aesthetically pleasing but also designed to perform. We integrate SEO " +
-    "best practices into every site, ensuring that your business ranks higher on search engines and attracts more " +
-    "organic traffic. Additionally, we provide ongoing support and maintenance, ensuring that your site remains up-to-date " +
-    "with the latest technology and security standards.",
-    "From e-commerce platforms to business websites, we can develop a solution that suits your specific needs. Let us help you" +
-    " create a powerful online presence that helps your business grow and succeed in the digital landscape."
+    "I specialize in custom website development designed to meet the unique needs of small businesses. I create responsive, SEO-friendly websites that not only look stunning but are also optimized for speed, user experience, and search engine rankings. Whether you're launching a new business or looking to upgrade an existing site, I offer end-to-end website solutions, from web design to development, ensuring your site aligns with your business goals.",
+    "I understand that every business is different, which is why my approach to website development is entirely custom. I work closely with you to develop a website that reflects your brand, engages your audience, and drives measurable results. My websites are designed with mobile-first principles, ensuring a seamless experience across all devices—whether your customers are browsing from a desktop, tablet, or smartphone.",
+    "My custom-built websites are not only aesthetically pleasing but also designed to perform. I integrate SEO best practices into every site, ensuring that your business ranks higher on search engines and attracts more organic traffic. Additionally, I provide ongoing support and maintenance, keeping your site up-to-date with the latest technology and security standards.",
+    "From e-commerce platforms to business websites, I can develop a solution tailored to your specific needs. Let me help you create a powerful online presence that helps your business grow and succeed in the digital landscape."
 ];
 
 const mobileServicesContent = [
