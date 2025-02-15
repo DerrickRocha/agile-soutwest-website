@@ -2,7 +2,6 @@
 
 import styling from "@/app/Projects.module.css";
 import React, {ReactNode, useState} from "react";
-import VerticalSpacingSmall from "@/app/components/verticalSpacingSmall";
 import InformationSection from "@/app/components/informationSection";
 
 interface OverlaySectionProps {
