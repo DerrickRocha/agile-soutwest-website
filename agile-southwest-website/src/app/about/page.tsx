@@ -19,7 +19,7 @@ const AboutPage = () => {
             <VerticalSpacingLarge/>
             <InformationSection title={aboutSubHeading} content={content}/>
             <VerticalSpacingLarge/>
-            <LargeImage imageUrl="/images/southeast_santafe_drone.webp" altText={"Southeast Santa Fe drone picture"} width={800} height={600}></LargeImage>
+            <LargeImage imageUrl="/images/southeast_santafe_drone.webp" altText={"Southeast Santa Fe drone picture"}></LargeImage>
         </Layout>
     );
 };

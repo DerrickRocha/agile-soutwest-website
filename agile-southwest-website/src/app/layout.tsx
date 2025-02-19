@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         "trusted partner in navigating the ever-changing world of technology, from website design to mobile " +
         "app development and device repair.",
     icons: {
-        icon: "/favicon.png",
+        icon: "/images/favicon.png",
     },
 };
 
