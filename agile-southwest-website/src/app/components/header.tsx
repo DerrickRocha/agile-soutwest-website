@@ -11,7 +11,7 @@ export default function Header() {
                     <Link href="/">
                         <Image
                             src="/images/agile_logo.svg"
-                            alt="Agile Southwest Logo"
+                            alt="Agile Southwest | Official site for Derrick Rocha's software development services"
                             width={164}
                             height={80}
                             priority={true}
