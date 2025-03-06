@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
-    "nodemailer": "^6.10.0",
     "styled-components": "^6.1.13",
     "swr": "^2.2.5"
   },
